@@ -415,7 +415,7 @@ export function OfflineQueueDashboardPage() {
                     : "Sinxronlash faol bo'lganda tiklash bloklangan"
                   : "Eskirgan sinxronlashlarni tiklash"
               }
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-rose-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Clock3 aria-hidden="true" className="h-4 w-4" />
               Tiklash {summary.staleSyncing > 0 ? `(${summary.staleSyncing})` : ""}
@@ -424,7 +424,7 @@ export function OfflineQueueDashboardPage() {
               type="button"
               disabled={summary.synced === 0}
               onClick={() => void handleClearSynced()}
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-rose-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Trash2 aria-hidden="true" className="h-4 w-4" />
               Yuborilganlarni tozalash
@@ -462,13 +462,13 @@ export function OfflineQueueDashboardPage() {
           title="Yuborilmoqda"
           value={String(summary.syncing)}
           icon={Loader2}
-          tone="indigo"
+          tone="rose"
         />
         <StatCard
           title="Navbat summasi"
           value={formatMoney(totals.queuedAmount)}
           icon={Clipboard}
-          tone="indigo"
+          tone="rose"
         />
         <StatCard
           title="Xato summasi"
@@ -502,7 +502,7 @@ export function OfflineQueueDashboardPage() {
         </div>
       ) : null}
       {actionNotice || lastResult ? (
-        <div className="rounded-xl border border-indigo-100/40 bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-soft">
+        <div className="rounded-xl border border-rose-100/40 bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-soft">
           {actionNotice ||
             (lastResult
               ? `Oxirgi sinxronlash ${formatDateTime(lastResult.completedAt)}: ${lastResult.reason}`
@@ -511,8 +511,8 @@ export function OfflineQueueDashboardPage() {
       ) : null}
 
       {syncEvents.length > 0 ? (
-        <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-          <div className="border-b border-indigo-100/40 px-4 py-3">
+        <section className="rounded border border-rose-100/40 bg-white shadow-soft">
+          <div className="border-b border-rose-100/40 px-4 py-3">
             <h2 className="text-base font-black text-slate-950">
               So'nggi sinxronlash faolligi
             </h2>
@@ -544,8 +544,8 @@ export function OfflineQueueDashboardPage() {
         </section>
       ) : null}
 
-      <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-        <div className="flex flex-col gap-3 border-b border-indigo-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
+      <section className="rounded border border-rose-100/40 bg-white shadow-soft">
+        <div className="flex flex-col gap-3 border-b border-rose-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-2">
             {filters.map((item) => (
               <button
@@ -565,7 +565,7 @@ export function OfflineQueueDashboardPage() {
           <select
             value={sort}
             onChange={(event) => setSort(event.target.value as QueueSort)}
-            className="h-10 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700"
+            className="h-10 rounded border border-rose-100/50 bg-white px-3 text-sm font-black text-slate-700"
           >
             {sortOptions.map((item) => (
               <option key={item.value} value={item.value}>
@@ -667,8 +667,8 @@ export function OfflineQueueDashboardPage() {
       </section>
 
       {selectedSale ? (
-        <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-          <div className="flex flex-col gap-3 border-b border-indigo-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
+        <section className="rounded border border-rose-100/40 bg-white shadow-soft">
+          <div className="flex flex-col gap-3 border-b border-rose-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-base font-black text-slate-950">
                 Savdo tafsiloti
@@ -700,7 +700,7 @@ export function OfflineQueueDashboardPage() {
                     "Lokal havola",
                   )
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-rose-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Havolani nusxalash
@@ -710,7 +710,7 @@ export function OfflineQueueDashboardPage() {
                 onClick={() =>
                   void handleCopy(selectedSale.idempotencyKey, "Idempotency kaliti")
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-rose-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Kalitni nusxalash
@@ -732,7 +732,7 @@ export function OfflineQueueDashboardPage() {
                 </p>
               </div>
             ) : null}
-            <div className="grid gap-3 rounded-xl border border-indigo-100/40 bg-indigo-50/30 p-4">
+            <div className="grid gap-3 rounded-xl border border-rose-100/40 bg-rose-50/30 p-4">
               <DetailRow
                 label="Lokal havola"
                 value={selectedSale.receiptFallback.receiptNumber}
@@ -792,7 +792,7 @@ export function OfflineQueueDashboardPage() {
               />
             </div>
 
-            <div className="grid gap-3 rounded-xl border border-indigo-100/40 bg-indigo-50/30 p-4">
+            <div className="grid gap-3 rounded-xl border border-rose-100/40 bg-rose-50/30 p-4">
               <DetailRow label="Oraliq jami" value={formatMoney(selectedSale.totals.subtotal)} />
               <DetailRow label="Jami" value={formatMoney(selectedSale.totals.total)} />
               <DetailRow

@@ -5,30 +5,30 @@ type StatCardProps = {
   value: string;
   description?: string;
   icon: LucideIcon;
-  tone?: "indigo" | "green" | "amber" | "rose" | "slate";
+  tone?: "rose" | "pink" | "amber" | "green" | "slate";
 };
 
 const toneClasses = {
-  indigo: "from-indigo-50/80 to-indigo-100/20 border-indigo-200/40",
-  green: "from-emerald-50/80 to-emerald-100/20 border-emerald-200/40",
-  amber: "from-amber-50/80 to-amber-100/20 border-amber-200/40",
   rose: "from-rose-50/80 to-rose-100/20 border-rose-200/40",
-  slate: "from-slate-50/80 to-indigo-50/20 border-indigo-100/40",
+  pink: "from-pink-50/80 to-pink-100/20 border-pink-200/40",
+  amber: "from-amber-50/80 to-amber-100/20 border-amber-200/40",
+  green: "from-emerald-50/80 to-emerald-100/20 border-emerald-200/40",
+  slate: "from-slate-50/80 to-rose-50/20 border-rose-100/40",
 };
 
 const iconBgClasses = {
-  indigo: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15 ring-1 ring-white/20",
-  green: "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20",
-  amber: "bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/15 ring-1 ring-white/20",
   rose: "bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15 ring-1 ring-white/20",
-  slate: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15 ring-1 ring-white/20",
+  pink: "bg-gradient-to-br from-pink-500 to-pink-600 text-white shadow-lg shadow-pink-500/15 ring-1 ring-white/20",
+  amber: "bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/15 ring-1 ring-white/20",
+  green: "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20",
+  slate: "bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15 ring-1 ring-white/20",
 };
 
 const valueClasses = {
-  indigo: "text-indigo-900",
-  green: "text-emerald-900",
-  amber: "text-amber-900",
   rose: "text-rose-900",
+  pink: "text-pink-900",
+  amber: "text-amber-900",
+  green: "text-emerald-900",
   slate: "text-slate-900",
 };
 

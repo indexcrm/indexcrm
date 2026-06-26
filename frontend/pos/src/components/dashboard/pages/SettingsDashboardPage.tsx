@@ -55,7 +55,7 @@ export function SettingsDashboardPage() {
           title="Akkaunt"
           value={user?.email ?? "Yuklanmagan"}
           icon={UserRound}
-          tone="indigo"
+          tone="rose"
         />
         <StatCard
           title="Rol"

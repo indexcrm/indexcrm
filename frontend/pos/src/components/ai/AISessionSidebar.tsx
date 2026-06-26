@@ -37,7 +37,7 @@ export function AISessionSidebar({
     <aside className="grid gap-3 rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-xs font-bold tracking-wide text-slate-600">
-          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 text-white shadow-sm">
+          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 text-white shadow-sm">
             <History aria-hidden="true" className="h-3.5 w-3.5" />
           </div>
           Chatlar
@@ -74,7 +74,7 @@ export function AISessionSidebar({
                 onClick={() => onSelect(session.id)}
                 className={`rounded-xl border p-3 text-left transition-all duration-150 ${
                   active
-                    ? "border-violet-200 bg-violet-50 shadow-sm"
+                    ? "border-pink-200 bg-pink-50 shadow-sm"
                     : "border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300"
                 }`}
               >
