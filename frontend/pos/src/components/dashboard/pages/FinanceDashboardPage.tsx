@@ -166,7 +166,7 @@ export function FinanceDashboardPage() {
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded border border-slate-200 bg-white p-4 shadow-panel"
+          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -185,7 +185,7 @@ export function FinanceDashboardPage() {
               <select
                 value={form.branch}
                 onChange={(event) => setForm({ ...form, branch: event.target.value })}
-                className="h-11 rounded border border-slate-300 bg-white px-3 shadow-panel"
+                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">
                   {branchesQuery.isFetching ? "Filiallar yuklanmoqda" : "Filialni tanlang"}
@@ -202,7 +202,7 @@ export function FinanceDashboardPage() {
               <input
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
-                className="h-11 rounded border border-slate-300 px-3 shadow-panel"
+                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">

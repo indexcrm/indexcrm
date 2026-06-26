@@ -83,9 +83,9 @@ export function ErrorState({
   const resolvedDescription = formatErrorDescription(error, description);
 
   return (
-    <section className="rounded-2xl border border-rose-200/80 bg-gradient-to-br from-rose-50 to-rose-50/50 p-5 shadow-sm">
+    <section className="rounded-2xl border border-rose-200/60 bg-gradient-to-br from-rose-50/80 to-rose-50/30 p-5 shadow-soft">
       <div className="flex items-start gap-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/20">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15 ring-1 ring-white/20">
           <AlertCircle aria-hidden="true" className="h-4 w-4" />
         </div>
         <div className="min-w-0 flex-1">
@@ -97,7 +97,7 @@ export function ErrorState({
             <button
               type="button"
               onClick={onRetry}
-              className="mt-3 inline-flex items-center gap-2 rounded-xl border border-rose-200 bg-white px-3.5 py-2 text-xs font-bold text-rose-700 shadow-sm hover:bg-rose-50 active:scale-95 transition-all"
+              className="mt-3 inline-flex items-center gap-2 rounded-xl border border-rose-200/60 bg-white px-3.5 py-2 text-xs font-bold text-rose-700 shadow-soft transition-all duration-200 hover:bg-rose-50 hover:shadow-md active:scale-95"
             >
               <RotateCw aria-hidden="true" className="h-3.5 w-3.5" />
               Qayta urinish
