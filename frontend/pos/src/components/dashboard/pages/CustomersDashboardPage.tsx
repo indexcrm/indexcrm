@@ -142,7 +142,7 @@ export function CustomersDashboardPage() {
           title="Mijozlar"
           value={String(customersQuery.data?.customers.count ?? customers.length)}
           icon={UsersRound}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Qarz hisoblari"

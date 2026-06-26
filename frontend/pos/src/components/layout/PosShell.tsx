@@ -20,20 +20,20 @@ export function PosShell({ children }: PosShellProps) {
   } = useCashierStore();
 
   return (
-    <main className="h-screen overflow-hidden bg-[#eef1f6] text-slate-900 flex flex-col">
-      <header className="no-print flex h-14 shrink-0 items-center justify-between bg-gradient-to-r from-[#0B1120] via-[#0f172a] to-[#0B1120] px-5 text-white shadow-lg shadow-black/10 border-b border-white/5">
+    <main className="h-screen overflow-hidden bg-[#f4f5f9] text-slate-900 flex flex-col">
+      <header className="no-print flex h-14 shrink-0 items-center justify-between bg-gradient-to-r from-[#0f172a] via-[#111827] to-[#0f172a] px-5 text-white shadow-lg shadow-indigo-500/5 border-b border-white/5">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white text-sm font-black shadow-lg shadow-blue-500/30">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/25">
               I
             </div>
             <span className="text-xl font-black tracking-tight text-white">
               <span className="text-white">INDEX</span>
-              <span className="text-blue-400 font-light ml-1">POS</span>
+              <span className="text-indigo-400 font-light ml-1">POS</span>
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-2">
-            <span className="rounded-md bg-blue-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-blue-400 border border-blue-400/20 uppercase">
+            <span className="rounded-md bg-indigo-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-indigo-400 border border-indigo-400/20 uppercase">
               Kassir
             </span>
           </div>
@@ -42,7 +42,7 @@ export function PosShell({ children }: PosShellProps) {
           <div className="hidden items-center gap-3 text-slate-400 lg:flex">
             {cashierName || cashierEmail ? (
               <div className="flex items-center gap-2">
-                <div className="h-6 w-6 rounded-full bg-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400">
+                <div className="h-6 w-6 rounded-full bg-indigo-500/20 flex items-center justify-center text-xs font-bold text-indigo-400">
                   {(cashierName || cashierEmail || "?").charAt(0).toUpperCase()}
                 </div>
                 <span className="text-white font-semibold tracking-tight text-sm max-w-[140px] truncate">{cashierName || cashierEmail}</span>

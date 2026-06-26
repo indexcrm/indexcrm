@@ -54,7 +54,7 @@ export function CashierActivityDashboardPage() {
           title="Kassirlar"
           value={String(performance.length)}
           icon={UsersRound}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Ochiq smenalar"

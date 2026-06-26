@@ -121,16 +121,16 @@ export function DashboardNav({ children }: DashboardNavProps) {
   const pageLabel = currentNavItem?.label ?? "Boshqaruv paneli";
 
   return (
-    <div className="min-h-screen bg-[#eef1f6] text-slate-900">
-      <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-white/5 bg-gradient-to-b from-[#0B1120] via-[#0f172a] to-[#0B1120] text-white lg:block shadow-2xl shadow-black/20 z-20">
+    <div className="min-h-screen bg-[#f4f5f9] text-slate-900">
+      <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-white/5 bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white lg:block shadow-2xl shadow-black/10 z-20">
         <div className="flex h-14 items-center gap-3 border-b border-white/5 px-5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white text-sm font-black shadow-lg shadow-blue-500/30">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/25">
             I
           </div>
           <div>
             <div className="text-sm font-black tracking-tight">
               <span className="text-white">INDEX</span>{" "}
-              <span className="text-blue-400 font-light">{roleLabel === "Egasi" ? "Ega" : roleLabel}</span>
+              <span className="text-indigo-400 font-light">{roleLabel === "Egasi" ? "Ega" : roleLabel}</span>
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
               {roleLabel} ko'rinishi
@@ -147,14 +147,14 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 href={item.href}
                 className={`group flex h-10 items-center gap-3 rounded-xl px-3.5 text-sm font-semibold transition-all duration-200 ${
                   active
-                    ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25"
+                    ? "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/25"
                     : "text-slate-400 hover:bg-white/5 hover:text-slate-200"
                 }`}
               >
                 <Icon aria-hidden="true" className={`h-4.5 w-4.5 transition-transform duration-200 ${active ? 'scale-110' : 'group-hover:scale-110'}`} />
                 <span>{active ? <span className="font-bold">{item.label}</span> : item.label}</span>
                 {active ? (
-                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-blue-400 shadow-sm shadow-blue-400/50" />
+                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-indigo-400 shadow-sm shadow-indigo-400/50" />
                 ) : null}
               </a>
             );
@@ -169,9 +169,9 @@ export function DashboardNav({ children }: DashboardNavProps) {
       </aside>
 
       <div className="lg:pl-64">
-        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-slate-200/80 bg-white/90 backdrop-blur-md px-4 shadow-sm lg:px-6">
+        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-indigo-500/5 bg-white/90 backdrop-blur-md px-4 shadow-soft lg:px-6">
           <div className="min-w-0 flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-slate-700 to-slate-800 text-white text-[10px] font-black shadow-sm lg:hidden">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-[10px] font-black shadow-sm lg:hidden">
               I
             </div>
             <div>
@@ -184,14 +184,14 @@ export function DashboardNav({ children }: DashboardNavProps) {
           <div className="flex shrink-0 items-center gap-2">
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-sm transition-all hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-3.5 py-2 text-xs font-bold text-indigo-600 shadow-sm transition-all hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 active:scale-95"
             >
               POS ochish
             </a>
             <LogoutButton />
           </div>
         </header>
-        <nav className="flex gap-1.5 overflow-x-auto border-b border-slate-200/80 bg-white/50 px-3 py-2 lg:hidden backdrop-blur-sm">
+        <nav className="flex gap-1.5 overflow-x-auto border-b border-indigo-100/50 bg-white/50 px-3 py-2 lg:hidden backdrop-blur-sm">
           {visibleNavItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
@@ -201,7 +201,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 href={item.href}
                 className={`inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg border px-2.5 text-[11px] font-bold transition-all ${
                   active
-                    ? "border-blue-200 bg-blue-50 text-blue-700 shadow-sm"
+                    ? "border-indigo-200 bg-indigo-50 text-indigo-700 shadow-sm"
                     : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
                 }`}
               >
@@ -216,15 +216,15 @@ export function DashboardNav({ children }: DashboardNavProps) {
             children
           ) : (
             <div className="p-4 lg:p-6">
-              <section className="rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+              <section className="rounded-2xl border border-indigo-100/50 bg-white shadow-soft overflow-hidden">
                 <EmptyState
                   title="Bu bo'lim mavjud emas"
                   description="Joriy rolingiz bu boshqaruv sahifasiga kirish huquqiga ega emas."
                 />
-                <div className="flex justify-center border-t border-slate-100 p-4">
+                <div className="flex justify-center border-t border-indigo-100/50 p-4">
                   <a
                     href="/"
-                    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-4 py-2.5 text-sm font-bold text-indigo-600 shadow-sm hover:bg-indigo-50 active:scale-95 transition-all"
                   >
                     <Lock aria-hidden="true" className="h-4 w-4" />
                     POS ochish

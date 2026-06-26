@@ -462,13 +462,13 @@ export function OfflineQueueDashboardPage() {
           title="Yuborilmoqda"
           value={String(summary.syncing)}
           icon={Loader2}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Navbat summasi"
           value={formatMoney(totals.queuedAmount)}
           icon={Clipboard}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Xato summasi"

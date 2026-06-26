@@ -81,23 +81,23 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0B1120] via-slate-900 to-[#0f172a] px-4">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-[#111827] to-slate-900 px-4">
       <div className="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40" />
-      <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
       <div className="w-full max-w-md animate-fade-in">
         <div className="mb-8 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white text-xl font-black shadow-lg shadow-blue-500/30 mb-4">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-xl font-black shadow-lg shadow-indigo-500/25 mb-4">
             I
           </div>
           <h1 className="text-2xl font-black tracking-tight text-white">
-            INDEX <span className="text-blue-400 font-light">POS</span>
+            INDEX <span className="text-indigo-400 font-light">POS</span>
           </h1>
           <p className="mt-1.5 text-sm font-medium text-slate-400">
             Davom etish uchun tizimga kiring
           </p>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/10 backdrop-blur-xl">
           <form className="grid gap-5" onSubmit={handleSubmit}>
             <label className="grid gap-1.5" htmlFor="login-email">
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
@@ -108,7 +108,7 @@ export default function LoginPage() {
                 type="text"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-blue-500/50 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/20 outline-none"
+                className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-indigo-500/50 focus:bg-white/10 focus:ring-2 focus:ring-indigo-500/20 outline-none"
                 placeholder="tillomahmudjonov"
                 autoComplete="username"
                 required
@@ -128,7 +128,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-blue-500/50 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/20 outline-none"
+                  className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-indigo-500/50 focus:bg-white/10 focus:ring-2 focus:ring-indigo-500/20 outline-none"
                   placeholder="Parolni kiriting"
                   autoComplete="current-password"
                   required
@@ -162,7 +162,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:from-blue-400 hover:to-blue-500 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 outline-none focus:ring-2 focus:ring-blue-500/40"
+              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-5 text-sm font-bold text-white shadow-lg shadow-indigo-500/25 transition-all duration-200 hover:from-indigo-400 hover:to-indigo-500 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 outline-none focus:ring-2 focus:ring-indigo-500/40"
             >
               {loading ? (
                 <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />

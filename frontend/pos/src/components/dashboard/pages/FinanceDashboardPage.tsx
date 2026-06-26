@@ -160,7 +160,7 @@ export function FinanceDashboardPage() {
           title="Kassalar"
           value={String(cashboxes.length)}
           icon={Landmark}
-          tone="blue"
+          tone="indigo"
         />
       </div>
       {form ? (

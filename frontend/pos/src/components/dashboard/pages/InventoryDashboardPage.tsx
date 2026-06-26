@@ -99,7 +99,7 @@ export function InventoryDashboardPage() {
           title="Ombordagi mahsulotlar"
           value={String(pickNumber(report, ["product_count"]))}
           icon={Boxes}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Qoldiq yozuvlari"

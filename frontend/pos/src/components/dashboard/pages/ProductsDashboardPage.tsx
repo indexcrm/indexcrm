@@ -215,7 +215,7 @@ export function ProductsDashboardPage() {
         title="Yuklangan mahsulotlar"
         value={String(productsQuery.data?.count ?? products.length)}
         icon={PackageSearch}
-        tone="blue"
+        tone="indigo"
       />
       {form ? (
         <form

@@ -52,11 +52,11 @@ export function AuthGate({ children }: AuthGateProps) {
 
   if (!isAuthReady) {
     return (
-      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0B1120] via-slate-900 to-[#0f172a]">
-        <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-[#111827] to-slate-900">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
         <div className="flex flex-col items-center gap-4 animate-fade-in">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg shadow-indigo-500/25">
             <Loader2 aria-hidden="true" className="h-6 w-6 animate-spin text-white" />
           </div>
           <span className="text-sm font-bold text-slate-400 tracking-wide">

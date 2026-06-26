@@ -150,7 +150,7 @@ export function SuppliersDashboardPage() {
           title="Yetkazuvchilar"
           value={String(suppliersQuery.data?.suppliers.count ?? suppliers.length)}
           icon={Truck}
-          tone="blue"
+          tone="indigo"
         />
         <StatCard
           title="Qarz hisoblari"
