@@ -99,7 +99,7 @@ function failureClassName(sale: PendingSaleRecord) {
   const failureClass =
     sale.failureClass ?? (sale.status === "failed" ? "unknown" : undefined);
   if (!failureClass) {
-    return "border-slate-200 bg-slate-50 text-slate-500";
+    return "border-slate-700/30 bg-slate-50 text-slate-400";
   }
   if (
     failureClass === "stock_conflict" ||
@@ -117,7 +117,7 @@ function failureClassName(sale: PendingSaleRecord) {
   if (failureClass === "backend_unavailable") {
     return "border-blue-200 bg-blue-50 text-blue-800";
   }
-  return "border-slate-200 bg-slate-50 text-slate-700";
+  return "border-slate-700/30 bg-slate-50 text-slate-300";
 }
 
 function paymentSummary(sale: PendingSaleRecord) {
@@ -415,7 +415,7 @@ export function OfflineQueueDashboardPage() {
                     : "Sinxronlash faol bo'lganda tiklash bloklangan"
                   : "Eskirgan sinxronlashlarni tiklash"
               }
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Clock3 aria-hidden="true" className="h-4 w-4" />
               Tiklash {summary.staleSyncing > 0 ? `(${summary.staleSyncing})` : ""}
@@ -424,7 +424,7 @@ export function OfflineQueueDashboardPage() {
               type="button"
               disabled={summary.synced === 0}
               onClick={() => void handleClearSynced()}
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Trash2 aria-hidden="true" className="h-4 w-4" />
               Yuborilganlarni tozalash
@@ -456,19 +456,19 @@ export function OfflineQueueDashboardPage() {
           title="Yuborilgan"
           value={String(summary.synced)}
           icon={CheckCircle2}
-          tone="green"
+          tone="emerald"
         />
         <StatCard
           title="Yuborilmoqda"
           value={String(summary.syncing)}
           icon={Loader2}
-          tone="indigo"
+          tone="cyan"
         />
         <StatCard
           title="Navbat summasi"
           value={formatMoney(totals.queuedAmount)}
           icon={Clipboard}
-          tone="indigo"
+          tone="cyan"
         />
         <StatCard
           title="Xato summasi"
@@ -502,7 +502,7 @@ export function OfflineQueueDashboardPage() {
         </div>
       ) : null}
       {actionNotice || lastResult ? (
-        <div className="rounded-xl border border-indigo-100/40 bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-soft">
+        <div className="rounded-xl border border-cyan-100/40 bg-[#131b2e] px-4 py-3 text-sm font-bold text-slate-300 shadow-lg shadow-black/20">
           {actionNotice ||
             (lastResult
               ? `Oxirgi sinxronlash ${formatDateTime(lastResult.completedAt)}: ${lastResult.reason}`
@@ -511,12 +511,12 @@ export function OfflineQueueDashboardPage() {
       ) : null}
 
       {syncEvents.length > 0 ? (
-        <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-          <div className="border-b border-indigo-100/40 px-4 py-3">
+        <section className="rounded border border-cyan-100/40 bg-[#131b2e] shadow-lg shadow-black/20">
+          <div className="border-b border-cyan-100/40 px-4 py-3">
             <h2 className="text-base font-black text-slate-950">
               So'nggi sinxronlash faolligi
             </h2>
-            <p className="text-sm font-semibold text-slate-500">
+            <p className="text-sm font-semibold text-slate-400">
               Qo'lda qayta urinish va tiklash hodisalari uchun lokal audit tarixi.
             </p>
           </div>
@@ -530,10 +530,10 @@ export function OfflineQueueDashboardPage() {
                   {syncEventLabel(event)}
                 </div>
                 <div className="grid gap-1">
-                  <div className="font-semibold text-slate-700">
+                  <div className="font-semibold text-slate-300">
                     {event.message}
                   </div>
-                  <div className="text-xs font-semibold text-slate-500">
+                  <div className="text-xs font-semibold text-slate-400">
                     {formatDateTime(event.timestamp)}
                     {syncEventMeta(event) ? ` | ${syncEventMeta(event)}` : ""}
                   </div>
@@ -544,8 +544,8 @@ export function OfflineQueueDashboardPage() {
         </section>
       ) : null}
 
-      <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-        <div className="flex flex-col gap-3 border-b border-indigo-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
+      <section className="rounded border border-cyan-100/40 bg-[#131b2e] shadow-lg shadow-black/20">
+        <div className="flex flex-col gap-3 border-b border-cyan-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-2">
             {filters.map((item) => (
               <button
@@ -555,7 +555,7 @@ export function OfflineQueueDashboardPage() {
                 className={`min-h-9 rounded border px-3 text-xs font-black uppercase ${
                   filter === item.value
                     ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                    : "border-slate-700/30 bg-[#131b2e] text-slate-600 hover:bg-slate-50"
                 }`}
               >
                 {item.label}
@@ -565,7 +565,7 @@ export function OfflineQueueDashboardPage() {
           <select
             value={sort}
             onChange={(event) => setSort(event.target.value as QueueSort)}
-            className="h-10 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700"
+            className="h-10 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300"
           >
             {sortOptions.map((item) => (
               <option key={item.value} value={item.value}>
@@ -584,7 +584,7 @@ export function OfflineQueueDashboardPage() {
           <div className="overflow-x-auto">
             <table className="min-w-full border-collapse text-sm">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500">
+                <tr className="border-b border-slate-700/30 bg-slate-50 text-xs uppercase text-slate-400">
                   <th className="px-4 py-3 text-left font-black">Havola</th>
                   <th className="px-4 py-3 text-left font-black">Holat</th>
                   <th className="px-4 py-3 text-left font-black">Yaratildi</th>
@@ -607,7 +607,7 @@ export function OfflineQueueDashboardPage() {
                   >
                     <td className="px-4 py-3 font-black text-slate-800">
                       <div>{sale.receiptFallback.receiptNumber}</div>
-                      <div className="text-xs font-semibold text-slate-500">
+                      <div className="text-xs font-semibold text-slate-400">
                         {shorten(sale.idempotencyKey, 8)}
                       </div>
                     </td>
@@ -620,7 +620,7 @@ export function OfflineQueueDashboardPage() {
                         {statusLabels[sale.status]}
                       </span>
                     </td>
-                    <td className="px-4 py-3 font-semibold text-slate-700">
+                    <td className="px-4 py-3 font-semibold text-slate-300">
                       {formatDateTime(sale.createdAt)}
                     </td>
                     <td className="px-4 py-3">
@@ -635,16 +635,16 @@ export function OfflineQueueDashboardPage() {
                     <td className="max-w-72 px-4 py-3 text-xs font-bold text-slate-600">
                       <span className="line-clamp-2">{nextStepForSale(sale)}</span>
                     </td>
-                    <td className="max-w-60 px-4 py-3 font-semibold text-slate-700">
+                    <td className="max-w-60 px-4 py-3 font-semibold text-slate-300">
                       <span className="line-clamp-2">{paymentSummary(sale)}</span>
                     </td>
                     <td className="px-4 py-3 text-right font-black text-slate-800">
                       {formatMoney(sale.totals.total)}
                     </td>
-                    <td className="px-4 py-3 font-semibold text-slate-700">
+                    <td className="px-4 py-3 font-semibold text-slate-300">
                       {sale.retryCount}
                       {sale.lastAttemptAt ? (
-                        <div className="text-xs text-slate-500">
+                        <div className="text-xs text-slate-400">
                           Oxirgi urinish: {formatDateTime(sale.lastAttemptAt)}
                         </div>
                       ) : null}
@@ -655,7 +655,7 @@ export function OfflineQueueDashboardPage() {
                         </div>
                       ) : null}
                     </td>
-                    <td className="px-4 py-3 font-semibold text-slate-700">
+                    <td className="px-4 py-3 font-semibold text-slate-300">
                       {sale.serverReceiptNumber ?? sale.serverSaleId ?? "-"}
                     </td>
                   </tr>
@@ -667,13 +667,13 @@ export function OfflineQueueDashboardPage() {
       </section>
 
       {selectedSale ? (
-        <section className="rounded border border-indigo-100/40 bg-white shadow-soft">
-          <div className="flex flex-col gap-3 border-b border-indigo-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
+        <section className="rounded border border-cyan-100/40 bg-[#131b2e] shadow-lg shadow-black/20">
+          <div className="flex flex-col gap-3 border-b border-cyan-100/40 px-4 py-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-base font-black text-slate-950">
                 Savdo tafsiloti
               </h2>
-              <p className="text-sm font-semibold text-slate-500">
+              <p className="text-sm font-semibold text-slate-400">
                 Lokal savdoni tiklash uchun faqat ko'rish payload nusxasi.
               </p>
             </div>
@@ -700,7 +700,7 @@ export function OfflineQueueDashboardPage() {
                     "Lokal havola",
                   )
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Havolani nusxalash
@@ -710,7 +710,7 @@ export function OfflineQueueDashboardPage() {
                 onClick={() =>
                   void handleCopy(selectedSale.idempotencyKey, "Idempotency kaliti")
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-indigo-100/50 bg-white px-3 text-sm font-black text-slate-700 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Kalitni nusxalash
@@ -732,7 +732,7 @@ export function OfflineQueueDashboardPage() {
                 </p>
               </div>
             ) : null}
-            <div className="grid gap-3 rounded-xl border border-indigo-100/40 bg-indigo-50/30 p-4">
+            <div className="grid gap-3 rounded-xl border border-cyan-100/40 bg-cyan-50/30 p-4">
               <DetailRow
                 label="Lokal havola"
                 value={selectedSale.receiptFallback.receiptNumber}
@@ -792,7 +792,7 @@ export function OfflineQueueDashboardPage() {
               />
             </div>
 
-            <div className="grid gap-3 rounded-xl border border-indigo-100/40 bg-indigo-50/30 p-4">
+            <div className="grid gap-3 rounded-xl border border-cyan-100/40 bg-cyan-50/30 p-4">
               <DetailRow label="Oraliq jami" value={formatMoney(selectedSale.totals.subtotal)} />
               <DetailRow label="Jami" value={formatMoney(selectedSale.totals.total)} />
               <DetailRow
@@ -812,16 +812,16 @@ export function OfflineQueueDashboardPage() {
             </div>
           </div>
 
-          <div className="grid gap-4 border-t border-slate-200 p-4 lg:grid-cols-2">
+          <div className="grid gap-4 border-t border-slate-700/30 p-4 lg:grid-cols-2">
             <section>
-              <h3 className="mb-2 text-sm font-black uppercase text-slate-500">
+              <h3 className="mb-2 text-sm font-black uppercase text-slate-400">
                 Mahsulotlar
               </h3>
               <div className="grid gap-2">
                 {selectedSale.cartItems.map((item) => (
                   <div
                     key={`${selectedSale.id}-${item.productId}`}
-                    className="rounded border border-slate-200 bg-slate-50 p-3"
+                    className="rounded border border-slate-700/30 bg-slate-50 p-3"
                   >
                     <div className="font-black text-slate-800">
                       {item.productName || item.productId}
@@ -832,7 +832,7 @@ export function OfflineQueueDashboardPage() {
                       <span>Chegirma: {formatMoney(item.discount)}</span>
                       <span>Jami: {formatMoney(item.lineTotal)}</span>
                     </div>
-                    <div className="mt-1 text-xs font-semibold text-slate-500">
+                    <div className="mt-1 text-xs font-semibold text-slate-400">
                       Mahsulot ID: {item.productId}
                     </div>
                   </div>
@@ -841,14 +841,14 @@ export function OfflineQueueDashboardPage() {
             </section>
 
             <section>
-              <h3 className="mb-2 text-sm font-black uppercase text-slate-500">
+              <h3 className="mb-2 text-sm font-black uppercase text-slate-400">
                 To'lovlar
               </h3>
               <div className="grid gap-2">
                 {selectedSale.payments.map((payment, index) => (
                   <div
                     key={`${selectedSale.id}-${payment.payment_method}-${index}`}
-                    className="flex items-center justify-between rounded border border-slate-200 bg-slate-50 p-3 text-sm font-bold"
+                    className="flex items-center justify-between rounded border border-slate-700/30 bg-slate-50 p-3 text-sm font-bold"
                   >
                     <span>{payment.payment_method}</span>
                     <span>{formatMoney(payment.amount)}</span>
@@ -866,7 +866,7 @@ export function OfflineQueueDashboardPage() {
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid gap-1 sm:grid-cols-[150px_1fr]">
-      <div className="text-xs font-black uppercase text-slate-500">{label}</div>
+      <div className="text-xs font-black uppercase text-slate-400">{label}</div>
       <div className="break-words text-sm font-bold text-slate-800">{value}</div>
     </div>
   );

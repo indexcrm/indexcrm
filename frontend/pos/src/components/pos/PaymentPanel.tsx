@@ -94,8 +94,8 @@ export function PaymentPanel({
   }, [submitPayment]);
 
   return (
-    <section className="no-print border-b border-slate-200/80 bg-white p-4">
-      <div className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-500">
+    <section className="no-print border-b border-slate-700/30/80 bg-[#131b2e] p-4">
+      <div className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-400">
         <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-700 text-white shadow-sm">
           <Banknote aria-hidden="true" className="h-3.5 w-3.5" />
         </div>
@@ -123,7 +123,7 @@ export function PaymentPanel({
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2.5">
         <label className="block">
-          <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Naqd summa
           </span>
           <input
@@ -132,11 +132,11 @@ export function PaymentPanel({
             onFocus={(event) => event.target.select()}
             disabled={mode === "card"}
             inputMode="decimal"
-            className="h-11 w-full rounded-xl border border-slate-200/80 bg-white px-3.5 text-lg font-black shadow-input transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:bg-slate-50 disabled:text-slate-400"
+            className="h-11 w-full rounded-xl border border-slate-700/30/80 bg-[#131b2e] px-3.5 text-lg font-black shadow-inner shadow-black/10 transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:bg-slate-50 disabled:text-slate-500"
           />
         </label>
         <label className="block">
-          <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Karta summa
           </span>
           <input
@@ -145,18 +145,18 @@ export function PaymentPanel({
             onFocus={(event) => event.target.select()}
             disabled={mode === "cash"}
             inputMode="decimal"
-            className="h-11 w-full rounded-xl border border-slate-200/80 bg-white px-3.5 text-lg font-black shadow-input transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:bg-slate-50 disabled:text-slate-400"
+            className="h-11 w-full rounded-xl border border-slate-700/30/80 bg-[#131b2e] px-3.5 text-lg font-black shadow-inner shadow-black/10 transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:bg-slate-50 disabled:text-slate-500"
           />
         </label>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2.5">
-        <div className="rounded-xl border border-slate-200/70 bg-gradient-to-b from-white to-slate-50 p-3 shadow-sm">
-          <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">To'landi</div>
-          <div className="text-xl font-black text-slate-900 mt-0.5">{formatMoney(paidAmount)}</div>
+        <div className="rounded-xl border border-slate-700/30/70 bg-gradient-to-b from-white to-slate-50 p-3 shadow-sm">
+          <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">To'landi</div>
+          <div className="text-xl font-black text-slate-100 mt-0.5">{formatMoney(paidAmount)}</div>
         </div>
-        <div className="rounded-xl border border-slate-200/70 bg-gradient-to-b from-white to-slate-50 p-3 shadow-sm">
-          <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">Qaytim</div>
-          <div className="text-xl font-black text-slate-900 mt-0.5">{formatMoney(changeAmount)}</div>
+        <div className="rounded-xl border border-slate-700/30/70 bg-gradient-to-b from-white to-slate-50 p-3 shadow-sm">
+          <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">Qaytim</div>
+          <div className="text-xl font-black text-slate-100 mt-0.5">{formatMoney(changeAmount)}</div>
         </div>
       </div>
       <div

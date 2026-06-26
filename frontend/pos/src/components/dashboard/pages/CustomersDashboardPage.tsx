@@ -122,7 +122,7 @@ export function CustomersDashboardPage() {
               onChange={(event) => setSearch(event.target.value)}
               aria-label="Mijozlarni qidirish"
               placeholder="Mijozlarni qidirish"
-              className="h-11 rounded-xl border border-indigo-100/50 px-3.5 font-semibold shadow-soft"
+              className="h-11 rounded-xl border border-cyan-500/10 px-3.5 font-semibold shadow-lg shadow-black/20"
             />
             <IconButton
               type="button"
@@ -142,7 +142,7 @@ export function CustomersDashboardPage() {
           title="Mijozlar"
           value={String(customersQuery.data?.customers.count ?? customers.length)}
           icon={UsersRound}
-          tone="indigo"
+          tone="cyan"
         />
         <StatCard
           title="Qarz hisoblari"
@@ -154,7 +154,7 @@ export function CustomersDashboardPage() {
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-cyan-100/40 bg-[#131b2e] p-5 shadow-lg shadow-black/20"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -168,27 +168,27 @@ export function CustomersDashboardPage() {
             />
           </div>
           <div className="grid gap-3 md:grid-cols-3">
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Ism
               <input
                 value={form.full_name}
                 onChange={(event) =>
                   setForm({ ...form, full_name: event.target.value })
                 }
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Telefon
               <input
                 value={form.phone}
                 onChange={(event) => setForm({ ...form, phone: event.target.value })}
                 inputMode="tel"
                 autoComplete="tel"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Qo'shimcha telefon
               <input
                 value={form.extra_phone}
@@ -197,20 +197,20 @@ export function CustomersDashboardPage() {
                 }
                 inputMode="tel"
                 autoComplete="tel"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700 md:col-span-2">
+            <label className="grid gap-1 text-sm font-bold text-slate-300 md:col-span-2">
               Manzil
               <input
                 value={form.address}
                 onChange={(event) =>
                   setForm({ ...form, address: event.target.value })
                 }
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
+            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-300">
               <input
                 type="checkbox"
                 checked={form.is_active}

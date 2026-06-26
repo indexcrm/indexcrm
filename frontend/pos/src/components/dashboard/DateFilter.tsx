@@ -8,9 +8,9 @@ type DateFilterProps = {
 
 export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
   return (
-    <div className="flex flex-col gap-2 rounded-xl border border-indigo-100/40 bg-white p-3 shadow-soft sm:flex-row sm:items-end">
+    <div className="flex flex-col gap-2 rounded-xl border border-cyan-100/40 bg-[#131b2e] p-3 shadow-lg shadow-black/20 sm:flex-row sm:items-end">
       <label className="block">
-        <span className="mb-1 block text-xs font-black uppercase text-slate-500">
+        <span className="mb-1 block text-xs font-black uppercase text-slate-400">
           Dan
         </span>
         <input
@@ -19,11 +19,11 @@ export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
           onChange={(event) =>
             onChange({ dateFrom: event.target.value, dateTo })
           }
-          className="h-10 rounded-lg border border-indigo-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-glow outline-none"
+          className="h-10 rounded-lg border border-cyan-200/50 px-3 font-semibold text-slate-300 transition-all duration-200 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 focus:shadow-lg shadow-cyan-500/10 outline-none"
         />
       </label>
       <label className="block">
-        <span className="mb-1 block text-xs font-black uppercase text-slate-500">
+        <span className="mb-1 block text-xs font-black uppercase text-slate-400">
           Gacha
         </span>
         <input
@@ -32,7 +32,7 @@ export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
           onChange={(event) =>
             onChange({ dateFrom, dateTo: event.target.value })
           }
-          className="h-10 rounded-lg border border-indigo-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-glow outline-none"
+          className="h-10 rounded-lg border border-cyan-200/50 px-3 font-semibold text-slate-300 transition-all duration-200 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 focus:shadow-lg shadow-cyan-500/10 outline-none"
         />
       </label>
     </div>

@@ -148,7 +148,7 @@ export function FinanceDashboardPage() {
           title="Foyda"
           value={formatMoney(pickNumber(profit, ["profit"]))}
           icon={CircleDollarSign}
-          tone="green"
+          tone="emerald"
         />
         <StatCard
           title="Xarajatlar"
@@ -160,13 +160,13 @@ export function FinanceDashboardPage() {
           title="Kassalar"
           value={String(cashboxes.length)}
           icon={Landmark}
-          tone="indigo"
+          tone="cyan"
         />
       </div>
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-cyan-100/40 bg-[#131b2e] p-5 shadow-lg shadow-black/20"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -180,12 +180,12 @@ export function FinanceDashboardPage() {
             />
           </div>
           <div className="grid gap-3 md:grid-cols-3">
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Filial
               <select
                 value={form.branch}
                 onChange={(event) => setForm({ ...form, branch: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 bg-[#131b2e] px-3.5 shadow-lg shadow-black/20"
               >
                 <option value="">
                   {branchesQuery.isFetching ? "Filiallar yuklanmoqda" : "Filialni tanlang"}
@@ -197,15 +197,15 @@ export function FinanceDashboardPage() {
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Nomi
               <input
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
+            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-300">
               <input
                 type="checkbox"
                 checked={form.is_active}
@@ -217,7 +217,7 @@ export function FinanceDashboardPage() {
               Faol
             </label>
           </div>
-          <p className="mt-2 text-xs font-semibold text-slate-500">
+          <p className="mt-2 text-xs font-semibold text-slate-400">
             Kassa balansi savdo, xarajat, kirim va kassa tuzatish operatsiyalari orqali o'zgaradi.
           </p>
           {formMessage ? (

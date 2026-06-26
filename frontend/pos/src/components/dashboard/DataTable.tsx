@@ -33,10 +33,10 @@ export function DataTable<T>({
   emptyDescription,
 }: DataTableProps<T>) {
   return (
-    <section className="rounded-2xl border border-indigo-100/40 bg-white shadow-soft transition-all duration-300 hover:shadow-elevated">
+    <section className="rounded-2xl border border-cyan-100/40 bg-[#131b2e] shadow-lg shadow-black/20 transition-all duration-300 hover:shadow-xl shadow-black/30">
       {title ? (
-        <div className="border-b border-indigo-100/40 px-5 py-4">
-          <h2 className="text-base font-bold tracking-tight text-slate-900">{title}</h2>
+        <div className="border-b border-cyan-100/40 px-5 py-4">
+          <h2 className="text-base font-bold tracking-tight text-slate-100">{title}</h2>
         </div>
       ) : null}
       {rows.length === 0 ? (
@@ -45,7 +45,7 @@ export function DataTable<T>({
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-indigo-100/40 bg-gradient-to-r from-indigo-50/40 to-indigo-50/20 text-[10px] uppercase tracking-wider text-slate-400">
+              <tr className="border-b border-cyan-100/40 bg-gradient-to-r from-cyan-50/40 to-cyan-50/20 text-[10px] uppercase tracking-wider text-slate-500">
                 {columns.map((column) => (
                   <th
                     key={column.key}
@@ -60,12 +60,12 @@ export function DataTable<T>({
               {rows.map((row, rowIndex) => (
                 <tr
                   key={rowKey ? rowKey(row, rowIndex) : rowIndex}
-                  className="transition-colors duration-150 hover:bg-indigo-50/30"
+                  className="transition-colors duration-150 hover:bg-cyan-50/30"
                 >
                   {columns.map((column) => (
                     <td
                       key={column.key}
-                      className={`px-4 py-3.5 text-sm font-semibold text-slate-700 ${alignClasses[column.align ?? "left"]}`}
+                      className={`px-4 py-3.5 text-sm font-semibold text-slate-300 ${alignClasses[column.align ?? "left"]}`}
                     >
                       {column.render(row)}
                     </td>

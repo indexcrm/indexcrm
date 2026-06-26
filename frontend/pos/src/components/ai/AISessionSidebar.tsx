@@ -34,10 +34,10 @@ export function AISessionSidebar({
   onSelect,
 }: AISessionSidebarProps) {
   return (
-    <aside className="grid gap-3 rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+    <aside className="grid gap-3 rounded-2xl border border-slate-700/30/80 bg-[#131b2e] p-3.5 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-xs font-bold tracking-wide text-slate-600">
-          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 text-white shadow-sm">
+          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-sm">
             <History aria-hidden="true" className="h-3.5 w-3.5" />
           </div>
           Chatlar
@@ -46,7 +46,7 @@ export function AISessionSidebar({
           type="button"
           onClick={onRefresh}
           disabled={isLoading}
-          className="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 transition-all active:scale-90"
+          className="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 transition-all active:scale-90"
           aria-label="Chatlarni yangilash"
         >
           <RefreshCw
@@ -74,17 +74,17 @@ export function AISessionSidebar({
                 onClick={() => onSelect(session.id)}
                 className={`rounded-xl border p-3 text-left transition-all duration-150 ${
                   active
-                    ? "border-violet-200 bg-violet-50 shadow-sm"
-                    : "border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300"
+                    ? "border-blue-200 bg-blue-50 shadow-sm"
+                    : "border-slate-700/30/80 bg-[#131b2e] hover:bg-slate-50 hover:border-slate-300"
                 }`}
               >
-                <div className="line-clamp-1 text-sm font-bold text-slate-900">
+                <div className="line-clamp-1 text-sm font-bold text-slate-100">
                   {session.title || "Yangi chat"}
                 </div>
-                <div className="mt-1 line-clamp-2 text-xs font-semibold leading-5 text-slate-400">
+                <div className="mt-1 line-clamp-2 text-xs font-semibold leading-5 text-slate-500">
                   {session.last_message_preview || "Hali xabar yo'q"}
                 </div>
-                <div className="mt-2 flex items-center justify-between gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                <div className="mt-2 flex items-center justify-between gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
                   <span>{session.message_count ?? 0} xabar</span>
                   <span>{formatDate(session.updated_at)}</span>
                 </div>
@@ -92,7 +92,7 @@ export function AISessionSidebar({
             );
           })
         ) : (
-          <div className="rounded-xl border-2 border-dashed border-slate-200 p-3.5 text-sm font-semibold text-slate-400 text-center">
+          <div className="rounded-xl border-2 border-dashed border-slate-700/30 p-3.5 text-sm font-semibold text-slate-500 text-center">
             Hozircha chatlar yo'q.
           </div>
         )}

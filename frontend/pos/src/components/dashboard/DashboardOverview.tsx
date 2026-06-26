@@ -97,14 +97,14 @@ export function DashboardOverview() {
 
   return (
     <div className="grid gap-5">
-      <div className="rounded-2xl border border-indigo-100/50 bg-gradient-to-br from-white to-indigo-50/30 p-5 shadow-soft">
+      <div className="rounded-2xl border border-cyan-500/10 bg-gradient-to-br from-white to-cyan-50/30 p-5 shadow-lg shadow-black/20">
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/15">
             <Sparkles aria-hidden="true" className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-lg font-black tracking-tight text-slate-900">{welcomeText}</h1>
-            <p className="mt-0.5 text-sm font-semibold text-slate-400">{userName || "Boshqaruv paneli"}</p>
+            <h1 className="text-lg font-black tracking-tight text-slate-100">{welcomeText}</h1>
+            <p className="mt-0.5 text-sm font-semibold text-slate-500">{userName || "Boshqaruv paneli"}</p>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ export function DashboardOverview() {
           value={formatMoney(todayRevenue)}
           description={`${todayCount} yakunlangan chek`}
           icon={ReceiptText}
-          tone="indigo"
+          tone="cyan"
         />
         <StatCard
           title="Buyurtmalar"
@@ -131,7 +131,7 @@ export function DashboardOverview() {
           value={formatMoney(pickNumber(summary?.today_profit, ["profit"]))}
           description="Qaytarish, kirim va xarajatlardan keyin"
           icon={TrendingUp}
-          tone="green"
+          tone="emerald"
         />
         <StatCard
           title="Kam qoldiq"
@@ -164,7 +164,7 @@ export function DashboardOverview() {
           value={formatMoney(cashboxTotal)}
           description={`${cashboxes.length} kassa yozuvi`}
           icon={Landmark}
-          tone="green"
+          tone="emerald"
         />
         <StatCard
           title="Ochiq smenalar"

@@ -81,9 +81,9 @@ export function ReceiptPreview({ sale, onNewSale }: ReceiptPreviewProps) {
   const canPrint = Boolean(sale) && !receiptQuery.isLoading;
 
   return (
-    <section className="print-panel flex min-h-0 flex-1 flex-col bg-white p-4">
+    <section className="print-panel flex min-h-0 flex-1 flex-col bg-[#131b2e] p-4">
       <div className="no-print mb-2 flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-500">
+        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-400">
           <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-sm">
             <ReceiptText aria-hidden="true" className="h-3.5 w-3.5" />
           </div>
@@ -106,9 +106,9 @@ export function ReceiptPreview({ sale, onNewSale }: ReceiptPreviewProps) {
           />
         </div>
       </div>
-      <div className="receipt-paper min-h-0 flex-1 overflow-y-auto rounded-xl border border-slate-200/70 bg-white p-4 font-mono text-[13px] leading-tight shadow-sm">
+      <div className="receipt-paper min-h-0 flex-1 overflow-y-auto rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-4 font-mono text-[13px] leading-tight shadow-sm">
         {!sale ? (
-          <div className="flex h-full items-center justify-center text-center font-sans text-sm font-semibold text-slate-500">
+          <div className="flex h-full items-center justify-center text-center font-sans text-sm font-semibold text-slate-400">
             Chekni ko'rish uchun savdoni yakunlang.
           </div>
         ) : receiptQuery.isLoading ? (
@@ -224,7 +224,7 @@ export function ReceiptPreview({ sale, onNewSale }: ReceiptPreviewProps) {
               </div>
             )}
 
-            <div className="mt-3 text-center text-xs uppercase text-slate-500">
+            <div className="mt-3 text-center text-xs uppercase text-slate-400">
               Xaridingiz uchun rahmat
             </div>
           </>

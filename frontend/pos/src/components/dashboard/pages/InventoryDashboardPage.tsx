@@ -99,7 +99,7 @@ export function InventoryDashboardPage() {
           title="Ombordagi mahsulotlar"
           value={String(pickNumber(report, ["product_count"]))}
           icon={Boxes}
-          tone="indigo"
+          tone="cyan"
         />
         <StatCard
           title="Qoldiq yozuvlari"
@@ -116,14 +116,14 @@ export function InventoryDashboardPage() {
       {adjustment ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-cyan-100/40 bg-[#131b2e] p-5 shadow-lg shadow-black/20"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-base font-black text-slate-950">
                 Qoldiqni tuzatish
               </h2>
-              <p className="text-sm font-semibold text-slate-500">
+              <p className="text-sm font-semibold text-slate-400">
                 {adjustment.stock.product_name} - {adjustment.stock.warehouse_name}.
                 Joriy miqdor: {adjustment.stock.quantity}
               </p>
@@ -136,7 +136,7 @@ export function InventoryDashboardPage() {
             />
           </div>
           <div className="grid gap-3 md:grid-cols-4">
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Harakat
               <select
                 value={adjustment.movementType}
@@ -146,13 +146,13 @@ export function InventoryDashboardPage() {
                     movementType: event.target.value as "IN" | "OUT",
                   })
                 }
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 bg-[#131b2e] px-3.5 shadow-lg shadow-black/20"
               >
                 <option value="IN">Qoldiqni oshirish</option>
                 <option value="OUT">Qoldiqni kamaytirish</option>
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Miqdor
               <input
                 value={adjustment.quantity}
@@ -160,10 +160,10 @@ export function InventoryDashboardPage() {
                   setAdjustment({ ...adjustment, quantity: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700 md:col-span-2">
+            <label className="grid gap-1 text-sm font-bold text-slate-300 md:col-span-2">
               Sabab
               <input
                 value={adjustment.note}
@@ -171,7 +171,7 @@ export function InventoryDashboardPage() {
                   setAdjustment({ ...adjustment, note: event.target.value })
                 }
                 placeholder="Inventarizatsiya tuzatishi"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
           </div>

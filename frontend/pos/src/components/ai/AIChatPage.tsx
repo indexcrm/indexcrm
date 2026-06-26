@@ -207,7 +207,7 @@ export function AIChatPage() {
           title="AI yordamchi"
           description="Index ma'lumotlari bo'yicha savdo, qoldiq, narx va hisobot savollariga javob beradi."
         />
-        <section className="rounded-2xl border border-slate-200/80 bg-white p-6 text-sm font-semibold text-slate-500 shadow-sm">
+        <section className="rounded-2xl border border-slate-700/30/80 bg-[#131b2e] p-6 text-sm font-semibold text-slate-400 shadow-sm">
           AI yordamchidan foydalanish uchun tizimga kiring.
         </section>
       </div>
@@ -223,7 +223,7 @@ export function AIChatPage() {
           <button
             type="button"
             onClick={startNewChat}
-            className="inline-flex h-9 items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 text-xs font-bold text-slate-700 shadow-sm hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 active:scale-95 transition-all"
+            className="inline-flex h-9 items-center gap-2 rounded-xl border border-slate-700/30 bg-[#131b2e] px-3.5 text-xs font-bold text-slate-300 shadow-sm hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 active:scale-95 transition-all"
           >
             <MessageSquarePlus aria-hidden="true" className="h-3.5 w-3.5" />
             Yangi chat
@@ -251,18 +251,18 @@ export function AIChatPage() {
           ) : null}
         </div>
 
-        <section className="grid min-h-[calc(100vh-12rem)] overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
+        <section className="grid min-h-[calc(100vh-12rem)] overflow-hidden rounded-2xl border border-slate-700/30/80 bg-[#131b2e] shadow-sm">
           <div className="flex min-h-0 flex-col">
-            <div className="flex items-center justify-between gap-3 border-b border-slate-200/80 px-4 py-3 bg-white/80">
+            <div className="flex items-center justify-between gap-3 border-b border-slate-700/30/80 px-4 py-3 bg-[#0f172a]/80">
               <div className="flex min-w-0 items-center gap-2.5">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white shadow-lg shadow-violet-500/20">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/20">
                   <Bot aria-hidden="true" className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
-                  <div className="truncate text-sm font-bold text-slate-900">
+                  <div className="truncate text-sm font-bold text-slate-100">
                     {sessionId ? "Joriy chat" : "Yangi chat"}
                   </div>
-                  <div className="truncate text-[11px] font-semibold text-slate-400">
+                  <div className="truncate text-[11px] font-semibold text-slate-500">
                     {loadingSessionId
                       ? "Chat yuklanmoqda..."
                       : "Savolingizni qisqa va aniq yozing."}
@@ -281,7 +281,7 @@ export function AIChatPage() {
               />
             </div>
 
-            <div className="grid gap-3 border-t border-slate-200/80 bg-white p-3 sm:p-4">
+            <div className="grid gap-3 border-t border-slate-700/30/80 bg-[#131b2e] p-3 sm:p-4">
               {error ? (
                 <div className="flex items-start gap-2.5 rounded-xl border border-rose-200/60 bg-gradient-to-r from-rose-50 to-rose-50/80 px-3.5 py-2.5 text-xs font-semibold text-rose-800 shadow-sm">
                   <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-200/60">

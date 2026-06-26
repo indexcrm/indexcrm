@@ -31,7 +31,7 @@ export function LogoutButton({
       className={`inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-xs font-bold tracking-wide transition-all active:scale-95 ${
         variant === "dark"
           ? "border-slate-600 bg-slate-900 text-white hover:bg-slate-800 shadow-sm"
-          : "border-rose-200 bg-white text-rose-600 hover:bg-rose-50 hover:border-rose-300 shadow-sm"
+          : "border-rose-200 bg-[#131b2e] text-rose-600 hover:bg-rose-50 hover:border-rose-300 shadow-sm"
       } ${className}`}
     >
       <LogOut aria-hidden="true" className="h-3.5 w-3.5" />

@@ -22,9 +22,9 @@ export function CustomerPicker({
   const customers = customersQuery.data?.results ?? [];
 
   return (
-    <section className="border-b border-slate-200/80 bg-white p-4">
+    <section className="border-b border-slate-700/30/80 bg-[#131b2e] p-4">
       <div className="mb-2 flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-500">
+        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-400">
           <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-sm">
             <UserRound aria-hidden="true" className="h-3.5 w-3.5" />
           </div>
@@ -54,10 +54,10 @@ export function CustomerPicker({
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Mijoz qidirish..."
-            className="h-10 w-full rounded-xl border border-slate-200/80 bg-white px-3.5 text-sm font-semibold shadow-input transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20"
+            className="h-10 w-full rounded-xl border border-slate-700/30/80 bg-[#131b2e] px-3.5 text-sm font-semibold shadow-inner shadow-black/10 transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20"
           />
           {customers.length > 0 ? (
-            <div className="mt-2 max-h-36 overflow-y-auto rounded-xl border border-slate-200/80 bg-white shadow-sm divide-y divide-slate-100">
+            <div className="mt-2 max-h-36 overflow-y-auto rounded-xl border border-slate-700/30/80 bg-[#131b2e] shadow-sm divide-y divide-slate-100">
               {customers.map((customer) => (
                 <button
                   key={customer.id}
@@ -67,8 +67,8 @@ export function CustomerPicker({
                   }}
                   className="block w-full px-3.5 py-2.5 text-left transition-colors hover:bg-blue-50/60 active:bg-blue-100/40"
                 >
-                  <span className="block text-sm font-bold text-slate-900">{customer.full_name}</span>
-                  <span className="text-xs text-slate-400 font-medium">
+                  <span className="block text-sm font-bold text-slate-100">{customer.full_name}</span>
+                  <span className="text-xs text-slate-500 font-medium">
                     {customer.phone || "—"}
                   </span>
                 </button>

@@ -30,7 +30,7 @@ export function AISuggestedQuestions({
 
   return (
     <div className="grid gap-2">
-      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
         Tavsiya savollar
       </div>
       <div className="flex flex-wrap gap-1.5">
@@ -40,7 +40,7 @@ export function AISuggestedQuestions({
             type="button"
             disabled={disabled}
             onClick={() => onSelect(question)}
-            className="min-h-8 rounded-xl border border-slate-200/70 bg-white px-3 py-1.5 text-left text-[11px] font-semibold text-slate-600 shadow-sm transition-all hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+            className="min-h-8 rounded-xl border border-slate-700/30/70 bg-[#131b2e] px-3 py-1.5 text-left text-[11px] font-semibold text-slate-600 shadow-sm transition-all hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {question}
           </button>

@@ -180,7 +180,7 @@ export function ProductsDashboardPage() {
               onChange={(event) => setSearch(event.target.value)}
               aria-label="Mahsulotlarni qidirish"
               placeholder="Mahsulotlarni qidirish"
-              className="h-11 rounded-xl border border-indigo-100/50 px-3.5 font-semibold shadow-soft"
+              className="h-11 rounded-xl border border-cyan-500/10 px-3.5 font-semibold shadow-lg shadow-black/20"
             />
             <IconButton
               type="button"
@@ -215,12 +215,12 @@ export function ProductsDashboardPage() {
         title="Yuklangan mahsulotlar"
         value={String(productsQuery.data?.count ?? products.length)}
         icon={PackageSearch}
-        tone="indigo"
+        tone="cyan"
       />
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-cyan-100/40 bg-[#131b2e] p-5 shadow-lg shadow-black/20"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -234,20 +234,20 @@ export function ProductsDashboardPage() {
             />
           </div>
           <div className="grid gap-3 md:grid-cols-3">
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Nomi
               <input
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Kategoriya
               <select
                 value={form.category}
                 onChange={(event) => setForm({ ...form, category: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 bg-[#131b2e] px-3.5 shadow-lg shadow-black/20"
               >
                 <option value="">Kategoriya tanlang</option>
                 {categories.map((category) => (
@@ -257,12 +257,12 @@ export function ProductsDashboardPage() {
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Birlik
               <select
                 value={form.unit}
                 onChange={(event) => setForm({ ...form, unit: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 bg-[#131b2e] px-3.5 shadow-lg shadow-black/20"
               >
                 <option value="">Birlik tanlang</option>
                 {units.map((unit) => (
@@ -272,28 +272,28 @@ export function ProductsDashboardPage() {
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               SKU
               <input
                 value={form.sku}
                 onChange={(event) => setForm({ ...form, sku: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Barcode
               <input
                 value={form.barcode}
                 onChange={(event) => setForm({ ...form, barcode: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Brend
               <select
                 value={form.brand}
                 onChange={(event) => setForm({ ...form, brand: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 bg-[#131b2e] px-3.5 shadow-lg shadow-black/20"
               >
                 <option value="">Brendsiz</option>
                 {brands.map((brand) => (
@@ -303,7 +303,7 @@ export function ProductsDashboardPage() {
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Kirim narxi
               <input
                 value={form.cost_price}
@@ -311,10 +311,10 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, cost_price: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
+            <label className="grid gap-1 text-sm font-bold text-slate-300">
               Sotuv narxi
               <input
                 value={form.selling_price}
@@ -322,10 +322,10 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, selling_price: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-cyan-500/10 px-3.5 shadow-lg shadow-black/20"
               />
             </label>
-            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
+            <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-300">
               <input
                 type="checkbox"
                 checked={form.is_active}

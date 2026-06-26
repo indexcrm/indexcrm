@@ -156,7 +156,7 @@ export function OfflineSyncStatus() {
           Ko'rib chiqish
         </a>
       </div>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-700">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-300">
         <span>{syncState}</span>
         <span>Lokal: {summary.pending}</span>
         <span>Ko'rish kerak: {summary.failed}</span>
@@ -194,7 +194,7 @@ export function OfflineSyncStatus() {
         </div>
       ) : null}
       {recentSales.length > 0 ? (
-        <div className="grid gap-1 border-t border-current/20 pt-2 text-[11px] text-slate-700">
+        <div className="grid gap-1 border-t border-current/20 pt-2 text-[11px] text-slate-300">
           {recentSales.map((sale) => (
             <div
               key={sale.id}

@@ -35,14 +35,14 @@ export function AIMessageList({
   if (!messages.length && !isLoading) {
     return (
       <div className="flex min-h-[320px] flex-col items-center justify-center gap-4 px-4 py-10 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 shadow-sm">
-          <Bot aria-hidden="true" className="h-7 w-7 text-violet-600" />
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 shadow-sm">
+          <Bot aria-hidden="true" className="h-7 w-7 text-blue-600" />
         </div>
         <div className="max-w-md">
           <h2 className="text-lg font-bold tracking-tight text-slate-800">
             Savol bering, men Index ma'lumotlari asosida yordam beraman.
           </h2>
-          <p className="mt-2 text-sm font-semibold leading-6 text-slate-400">
+          <p className="mt-2 text-sm font-semibold leading-6 text-slate-500">
             Savdo, qoldiq, narx, kassir faoliyati va hisobotlar bo'yicha qisqa
             savol yozing.
           </p>
@@ -64,9 +64,9 @@ export function AIMessageList({
       ))}
       {isLoading ? (
         <div className="flex justify-start animate-fade-in">
-          <div className="inline-flex items-center gap-2.5 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm font-semibold text-slate-500 shadow-sm">
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100">
-              <Loader2 aria-hidden="true" className="h-3.5 w-3.5 animate-spin text-violet-600" />
+          <div className="inline-flex items-center gap-2.5 rounded-2xl border border-slate-700/30/80 bg-[#131b2e] px-4 py-3 text-sm font-semibold text-slate-400 shadow-sm">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
+              <Loader2 aria-hidden="true" className="h-3.5 w-3.5 animate-spin text-blue-600" />
             </div>
             Javob tayyorlanmoqda...
           </div>

@@ -20,19 +20,19 @@ export function CartSummary({
   onClear,
 }: CartSummaryProps) {
   return (
-    <section className="no-print border-t border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-4">
+    <section className="no-print border-t border-slate-700/30/80 bg-gradient-to-b from-white to-slate-50/50 p-4">
       <div className="grid grid-cols-3 gap-2.5">
-        <div className="rounded-xl border border-slate-200/70 bg-white p-3 shadow-sm">
-          <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+        <div className="rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-3 shadow-sm">
+          <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">
             Soni
           </div>
-          <div className="text-2xl font-black text-slate-900 mt-0.5">{itemCount}</div>
+          <div className="text-2xl font-black text-slate-100 mt-0.5">{itemCount}</div>
         </div>
-        <div className="rounded-xl border border-slate-200/70 bg-white p-3 shadow-sm">
-          <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+        <div className="rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-3 shadow-sm">
+          <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">
             Oraliq
           </div>
-          <div className="text-2xl font-black text-slate-900 mt-0.5">
+          <div className="text-2xl font-black text-slate-100 mt-0.5">
             {formatMoney(subtotal)}
           </div>
         </div>

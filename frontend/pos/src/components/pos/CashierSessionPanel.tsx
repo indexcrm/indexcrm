@@ -436,9 +436,9 @@ export function CashierSessionPanel() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="no-print border-b border-slate-200/80 bg-white p-4"
+      className="no-print border-b border-slate-700/30/80 bg-[#131b2e] p-4"
     >
-      <div className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-500">
+      <div className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-400">
         <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-sm">
           <UserCog aria-hidden="true" className="h-3.5 w-3.5" />
         </div>
@@ -473,21 +473,21 @@ export function CashierSessionPanel() {
               : missingSessionMessage}
         </span>
       </div>
-      <div className="mb-4 flex flex-col gap-1.5 rounded-xl bg-gradient-to-b from-slate-50 to-white p-3.5 text-sm shadow-sm border border-slate-200/70">
+      <div className="mb-4 flex flex-col gap-1.5 rounded-xl bg-gradient-to-b from-slate-50 to-white p-3.5 text-sm shadow-sm border border-slate-700/30/70">
         <div className="flex justify-between items-center py-1">
-          <span className="text-slate-400 font-medium text-xs">Filial</span>
-          <span className="font-bold text-slate-900 truncate pl-2 text-sm">{selectedBranch?.name ?? (branchId ? "Tanlangan filial" : "—")}</span>
+          <span className="text-slate-500 font-medium text-xs">Filial</span>
+          <span className="font-bold text-slate-100 truncate pl-2 text-sm">{selectedBranch?.name ?? (branchId ? "Tanlangan filial" : "—")}</span>
         </div>
         <div className="flex justify-between items-center py-1">
-          <span className="text-slate-400 font-medium text-xs">Ombor</span>
-          <span className="font-bold text-slate-900 truncate pl-2 text-sm">{selectedWarehouse?.name ?? (warehouseId ? "Tanlangan ombor" : "—")}</span>
+          <span className="text-slate-500 font-medium text-xs">Ombor</span>
+          <span className="font-bold text-slate-100 truncate pl-2 text-sm">{selectedWarehouse?.name ?? (warehouseId ? "Tanlangan ombor" : "—")}</span>
         </div>
         <div className="flex justify-between items-center py-1">
-          <span className="text-slate-400 font-medium text-xs">Kassa</span>
-          <span className="font-bold text-slate-900 truncate pl-2 text-sm">{selectedCashDesk ? `${selectedCashDesk.code} - ${selectedCashDesk.name}` : cashDeskId ? "Tanlangan" : "—"}</span>
+          <span className="text-slate-500 font-medium text-xs">Kassa</span>
+          <span className="font-bold text-slate-100 truncate pl-2 text-sm">{selectedCashDesk ? `${selectedCashDesk.code} - ${selectedCashDesk.name}` : cashDeskId ? "Tanlangan" : "—"}</span>
         </div>
-        <div className="flex justify-between items-center py-1 pt-2 mt-1 border-t border-slate-200/60">
-          <span className="text-slate-400 font-medium text-xs">Smena</span>
+        <div className="flex justify-between items-center py-1 pt-2 mt-1 border-t border-slate-700/30/60">
+          <span className="text-slate-500 font-medium text-xs">Smena</span>
           <span className={`font-bold px-2.5 py-0.5 rounded-full text-[10px] tracking-wide ${activeShiftId ? "bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-200" : "bg-rose-50 text-rose-600 ring-1 ring-inset ring-rose-200"}`}>{activeShiftId ? "Ochiq" : "Yo'q"}</span>
         </div>
       </div>
@@ -501,36 +501,36 @@ export function CashierSessionPanel() {
       ) : null}
       <div className="grid grid-cols-2 gap-3">
         <label className="block col-span-2 sm:col-span-1">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-400">
             Kassir ismi
           </span>
           <input
             value={cashierName}
             onChange={(event) => setCashierName(event.target.value)}
             placeholder="Kassir"
-            className="h-11 w-full rounded-lg border-0 bg-white px-4 font-semibold text-slate-900 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all"
+            className="h-11 w-full rounded-lg border-0 bg-[#131b2e] px-4 font-semibold text-slate-100 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all"
           />
         </label>
         <label className="block col-span-2 sm:col-span-1">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-400">
             Email
           </span>
           <input
             value={cashierEmail}
             onChange={(event) => setCashierEmail(event.target.value)}
             placeholder="Email"
-            className="h-11 w-full rounded-lg border-0 bg-white px-4 font-semibold text-slate-900 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all"
+            className="h-11 w-full rounded-lg border-0 bg-[#131b2e] px-4 font-semibold text-slate-100 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all"
           />
         </label>
         <label className="block col-span-2 sm:col-span-1">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-400">
             Filial
           </span>
           <select
             value={branchId}
             onChange={(event) => handleBranchChange(event.target.value)}
             disabled={branchesQuery.isFetching && branches.length === 0}
-            className="h-11 w-full rounded-lg border-0 bg-white px-4 font-semibold text-slate-900 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
+            className="h-11 w-full rounded-lg border-0 bg-[#131b2e] px-4 font-semibold text-slate-100 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
           >
             <option value="">
               {branchesQuery.isFetching && branches.length === 0
@@ -547,14 +547,14 @@ export function CashierSessionPanel() {
           </select>
         </label>
         <label className="block col-span-2 sm:col-span-1">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-400">
             Ombor
           </span>
           <select
             value={warehouseId}
             onChange={(event) => handleWarehouseChange(event.target.value)}
             disabled={!branchId || warehousesQuery.isFetching && warehouses.length === 0}
-            className="h-11 w-full rounded-lg border-0 bg-white px-4 font-semibold text-slate-900 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
+            className="h-11 w-full rounded-lg border-0 bg-[#131b2e] px-4 font-semibold text-slate-100 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
           >
             <option value="">
               {!branchId
@@ -573,14 +573,14 @@ export function CashierSessionPanel() {
           </select>
         </label>
         <label className="block col-span-2">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-400">
             Kassa
           </span>
           <select
             value={cashDeskId}
             onChange={(event) => handleCashDeskChange(event.target.value)}
             disabled={!branchId || cashDesksQuery.isFetching && cashDesks.length === 0}
-            className="h-11 w-full rounded-lg border-0 bg-white px-4 font-semibold text-slate-900 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
+            className="h-11 w-full rounded-lg border-0 bg-[#131b2e] px-4 font-semibold text-slate-100 ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all appearance-none"
           >
             <option value="">
               {!branchId
@@ -620,36 +620,36 @@ export function CashierSessionPanel() {
         tone="primary"
         className="mt-4 w-full h-11 rounded-xl text-sm font-bold shadow-lg shadow-blue-500/20"
       />
-      <div className="mt-4 grid grid-cols-2 gap-3 bg-gradient-to-b from-white to-slate-50/50 p-4 rounded-xl border border-slate-200/70 shadow-sm">
+      <div className="mt-4 grid grid-cols-2 gap-3 bg-gradient-to-b from-white to-slate-50/50 p-4 rounded-xl border border-slate-700/30/70 shadow-sm">
         <label className="block">
-          <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Boshlang'ich
           </span>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold text-[11px]">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500 font-semibold text-[11px]">
               UZS
             </span>
             <input
               value={openingBalance}
               onChange={(event) => setOpeningBalance(event.target.value)}
               inputMode="decimal"
-              className="h-10 w-full rounded-xl border-0 bg-white pl-11 pr-3 font-bold text-slate-900 text-sm ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-all shadow-input"
+              className="h-10 w-full rounded-xl border-0 bg-[#131b2e] pl-11 pr-3 font-bold text-slate-100 text-sm ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-all shadow-inner shadow-black/10"
             />
           </div>
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Yakuniy
           </span>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold text-[11px]">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500 font-semibold text-[11px]">
               UZS
             </span>
             <input
               value={closingBalance}
               onChange={(event) => setClosingBalance(event.target.value)}
               inputMode="decimal"
-              className="h-10 w-full rounded-xl border-0 bg-white pl-11 pr-3 font-bold text-slate-900 text-sm ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-all shadow-input"
+              className="h-10 w-full rounded-xl border-0 bg-[#131b2e] pl-11 pr-3 font-bold text-slate-100 text-sm ring-1 ring-inset ring-slate-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-all shadow-inner shadow-black/10"
             />
           </div>
         </label>
@@ -687,7 +687,7 @@ export function CashierSessionPanel() {
         />
       </div>
       {shiftNotice ? (
-        <div className="mt-4 rounded-xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 px-4 py-3 text-xs font-semibold text-slate-600 shadow-sm text-center animate-fade-in">
+        <div className="mt-4 rounded-xl border border-slate-700/30 bg-gradient-to-b from-white to-slate-50 px-4 py-3 text-xs font-semibold text-slate-600 shadow-sm text-center animate-fade-in">
           {shiftNotice}
         </div>
       ) : null}

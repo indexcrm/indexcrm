@@ -41,15 +41,15 @@ export function AIMessageBubble({
         className={`max-w-[min(680px,92%)] rounded-2xl px-4 py-3 shadow-sm ${
           isUser
             ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-blue-500/20"
-            : "border border-slate-200/80 bg-white text-slate-900"
+            : "border border-slate-700/30/80 bg-[#131b2e] text-slate-100"
         }`}
       >
         <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider">
           <Icon
             aria-hidden="true"
-            className={`h-3.5 w-3.5 ${isUser ? "text-blue-100" : "text-violet-600"}`}
+            className={`h-3.5 w-3.5 ${isUser ? "text-blue-100" : "text-blue-600"}`}
           />
-          <span className={isUser ? "text-blue-100" : "text-slate-400"}>
+          <span className={isUser ? "text-blue-100" : "text-slate-500"}>
             {label}
           </span>
         </div>
@@ -57,7 +57,7 @@ export function AIMessageBubble({
           {message.content}
         </div>
         {!isUser && showMetadata ? (
-          <div className="mt-3 flex flex-wrap gap-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="mt-3 flex flex-wrap gap-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-500">
             {message.intent ? <span className="rounded-md bg-slate-100 px-2 py-0.5">Niyat: {message.intent}</span> : null}
             {message.source ? <span className="rounded-md bg-slate-100 px-2 py-0.5">Manba: {message.source}</span> : null}
             {message.confidence !== undefined ? (

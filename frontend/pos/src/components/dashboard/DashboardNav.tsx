@@ -121,18 +121,18 @@ export function DashboardNav({ children }: DashboardNavProps) {
   const pageLabel = currentNavItem?.label ?? "Boshqaruv paneli";
 
   return (
-    <div className="min-h-screen bg-[#f4f5f9] text-slate-900">
+    <div className="min-h-screen bg-[#0b1120] text-slate-100">
       <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-white/[0.04] bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white lg:block shadow-2xl shadow-black/10 z-20">
         <div className="flex h-14 items-center gap-3 border-b border-white/[0.04] px-5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/20 ring-1 ring-white/10">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 text-white text-sm font-black shadow-lg shadow-cyan-500/20 ring-1 ring-white/10">
             I
           </div>
           <div>
             <div className="text-sm font-black tracking-tight">
               <span className="text-white">INDEX</span>{" "}
-              <span className="text-indigo-400 font-light">{roleLabel === "Egasi" ? "Ega" : roleLabel}</span>
+              <span className="text-cyan-400 font-light">{roleLabel === "Egasi" ? "Ega" : roleLabel}</span>
             </div>
-            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
               {roleLabel} ko'rinishi
             </div>
           </div>
@@ -147,8 +147,8 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 href={item.href}
                 className={`group flex h-10 items-center gap-3 rounded-xl px-3.5 text-sm font-semibold transition-all duration-200 ${
                   active
-                    ? "bg-gradient-to-r from-indigo-500/90 to-indigo-600/90 text-white shadow-lg shadow-indigo-500/15"
-                    : "text-slate-400 hover:bg-white/[0.04] hover:text-slate-200"
+                    ? "bg-gradient-to-r from-cyan-500/90 to-cyan-600/90 text-white shadow-lg shadow-cyan-500/15"
+                    : "text-slate-500 hover:bg-white/[0.04] hover:text-slate-200"
                 }`}
               >
                 <Icon aria-hidden="true" className={`h-4.5 w-4.5 transition-all duration-200 ${active ? 'scale-110' : 'group-hover:scale-110'}`} />
@@ -161,7 +161,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
           })}
         </nav>
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/[0.04]">
-          <div className="flex items-center gap-2 text-[11px] text-slate-500">
+          <div className="flex items-center gap-2 text-[11px] text-slate-400">
             <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/30" />
             INDEX POS v0.1.0
           </div>
@@ -169,14 +169,14 @@ export function DashboardNav({ children }: DashboardNavProps) {
       </aside>
 
       <div className="lg:pl-64">
-        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-indigo-100/50 bg-white/80 px-4 shadow-soft backdrop-blur-xl lg:px-6">
+        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-cyan-500/10 bg-[#0f172a]/80 px-4 shadow-lg shadow-black/20 backdrop-blur-xl lg:px-6">
           <div className="min-w-0 flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-[10px] font-black shadow-sm lg:hidden">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 text-white text-[10px] font-black shadow-sm lg:hidden">
               I
             </div>
             <div>
-              <div className="text-base font-black tracking-tight text-slate-900">{pageLabel}</div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              <div className="text-base font-black tracking-tight text-slate-100">{pageLabel}</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
                 {roleLabel} boshqaruv paneli
               </div>
             </div>
@@ -184,14 +184,14 @@ export function DashboardNav({ children }: DashboardNavProps) {
           <div className="flex shrink-0 items-center gap-2">
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-xl border border-indigo-100/60 bg-white px-3.5 py-2 text-xs font-bold text-indigo-600 shadow-sm transition-all duration-200 hover:bg-indigo-50 hover:border-indigo-200 hover:shadow-md active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/15 bg-[#131b2e] px-3.5 py-2 text-xs font-bold text-cyan-600 shadow-sm transition-all duration-200 hover:bg-cyan-50 hover:border-cyan-200 hover:shadow-md active:scale-95"
             >
               POS ochish
             </a>
             <LogoutButton />
           </div>
         </header>
-        <nav className="flex gap-1.5 overflow-x-auto border-b border-indigo-100/50 bg-white/50 px-3 py-2 lg:hidden backdrop-blur-sm">
+        <nav className="flex gap-1.5 overflow-x-auto border-b border-cyan-500/10 bg-[#0f172a]/60 px-3 py-2 lg:hidden backdrop-blur-sm">
           {visibleNavItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
@@ -201,8 +201,8 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 href={item.href}
                 className={`inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg border px-2.5 text-[11px] font-bold transition-all ${
                   active
-                    ? "border-indigo-200 bg-indigo-50 text-indigo-700 shadow-sm"
-                    : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
+                    ? "border-cyan-200 bg-cyan-50 text-cyan-700 shadow-sm"
+                    : "border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-50"
                 }`}
               >
                 <Icon aria-hidden="true" className="h-3.5 w-3.5" />
@@ -216,15 +216,15 @@ export function DashboardNav({ children }: DashboardNavProps) {
             children
           ) : (
             <div className="p-4 lg:p-6">
-              <section className="rounded-2xl border border-indigo-100/50 bg-white shadow-soft overflow-hidden">
+              <section className="rounded-2xl border border-cyan-500/10 bg-[#131b2e] shadow-lg shadow-black/20 overflow-hidden">
                 <EmptyState
                   title="Bu bo'lim mavjud emas"
                   description="Joriy rolingiz bu boshqaruv sahifasiga kirish huquqiga ega emas."
                 />
-                <div className="flex justify-center border-t border-indigo-100/50 p-4">
+                <div className="flex justify-center border-t border-cyan-500/10 p-4">
                   <a
                     href="/"
-                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-100/60 bg-white px-4 py-2.5 text-sm font-bold text-indigo-600 shadow-sm transition-all duration-200 hover:bg-indigo-50 hover:shadow-md active:scale-95"
+                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/15 bg-[#131b2e] px-4 py-2.5 text-sm font-bold text-cyan-600 shadow-sm transition-all duration-200 hover:bg-cyan-50 hover:shadow-md active:scale-95"
                   >
                     <Lock aria-hidden="true" className="h-4 w-4" />
                     POS ochish
