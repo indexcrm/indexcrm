@@ -20,15 +20,15 @@ export function CartSummary({
   onClear,
 }: CartSummaryProps) {
   return (
-    <section className="no-print border-t border-slate-700/30/80 bg-gradient-to-b from-white to-slate-50/50 p-4">
+    <section className="no-print border-t border-slate-700/30 bg-gradient-to-b from-slate-800 to-slate-900/50 p-4">
       <div className="grid grid-cols-3 gap-2.5">
-        <div className="rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-3 shadow-sm">
+        <div className="rounded-xl border border-slate-700/30 bg-[#131b2e] p-3 shadow-sm">
           <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">
             Soni
           </div>
           <div className="text-2xl font-black text-slate-100 mt-0.5">{itemCount}</div>
         </div>
-        <div className="rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-3 shadow-sm">
+        <div className="rounded-xl border border-slate-700/30 bg-[#131b2e] p-3 shadow-sm">
           <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">
             Oraliq
           </div>

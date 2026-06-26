@@ -118,7 +118,7 @@ export function ReportsDashboardPage() {
             key={link.href}
             onClick={() => void handleExport(link)}
             disabled={exporting === link.href}
-            className="rounded border border-slate-700/30 bg-[#131b2e] p-4 text-left font-black text-slate-800 shadow shadow-black/20 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
+            className="rounded border border-slate-700/30 bg-[#131b2e] p-4 text-left font-black text-slate-800 shadow shadow-black/20 hover:bg-slate-800/50 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <Download aria-hidden="true" className="mb-3 h-5 w-5 text-blue-700" />
             {exporting === link.href ? "Yuklab olinmoqda" : link.label}

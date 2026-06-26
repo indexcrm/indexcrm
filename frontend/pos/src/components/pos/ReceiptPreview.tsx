@@ -106,7 +106,7 @@ export function ReceiptPreview({ sale, onNewSale }: ReceiptPreviewProps) {
           />
         </div>
       </div>
-      <div className="receipt-paper min-h-0 flex-1 overflow-y-auto rounded-xl border border-slate-700/30/70 bg-[#131b2e] p-4 font-mono text-[13px] leading-tight shadow-sm">
+      <div className="receipt-paper min-h-0 flex-1 overflow-y-auto rounded-xl border border-slate-700/30 bg-[#131b2e] p-4 font-mono text-[13px] leading-tight shadow-sm">
         {!sale ? (
           <div className="flex h-full items-center justify-center text-center font-sans text-sm font-semibold text-slate-400">
             Chekni ko'rish uchun savdoni yakunlang.

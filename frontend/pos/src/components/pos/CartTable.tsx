@@ -16,7 +16,7 @@ type CartTableProps = {
 export function CartTable({ items, onQuantityChange, onRemove }: CartTableProps) {
   return (
     <section className="flex min-h-0 flex-1 flex-col bg-[#131b2e]">
-      <div className="grid grid-cols-[1fr_130px_110px_48px] border-b border-slate-700/30/80 bg-slate-50/80 px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+      <div className="grid grid-cols-[1fr_130px_110px_48px] border-b border-slate-700/30 bg-slate-800/50/80 px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest text-slate-500">
         <span>Mahsulot</span>
         <span className="text-center">Miqdor</span>
         <span className="text-right">Jami</span>
@@ -42,10 +42,10 @@ export function CartTable({ items, onQuantityChange, onRemove }: CartTableProps)
           items.map((item) => (
             <div
               key={item.product.id}
-              className="group grid min-h-[5.5rem] grid-cols-[1fr_130px_110px_48px] items-center gap-3 bg-[#131b2e] px-5 py-3.5 transition-all duration-150 hover:bg-blue-50/20 hover:shadow-sm"
+              className="group grid min-h-[5.5rem] grid-cols-[1fr_130px_110px_48px] items-center gap-3 bg-[#131b2e] px-5 py-3.5 transition-all duration-150 hover:bg-blue-900/20/20 hover:shadow-sm"
             >
               <div className="min-w-0">
-                <div className="truncate text-[15px] font-bold text-slate-100 tracking-tight group-hover:text-blue-700 transition-colors">
+                <div className="truncate text-[15px] font-bold text-slate-100 tracking-tight group-hover:text-blue-300 transition-colors">
                   {item.product.name}
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 mt-0.5">
@@ -82,7 +82,7 @@ export function CartTable({ items, onQuantityChange, onRemove }: CartTableProps)
                     onQuantityChange(item.product.id, item.quantity + 1)
                   }
                   hideLabel
-                  className="h-8 w-8 rounded-r-lg rounded-l-none bg-transparent text-blue-600 hover:bg-blue-50 border-0 shadow-none"
+                  className="h-8 w-8 rounded-r-lg rounded-l-none bg-transparent text-blue-600 hover:bg-blue-900/20 border-0 shadow-none"
                 />
               </div>
               <div className="text-right text-base font-black text-slate-100 tracking-tight">

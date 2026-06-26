@@ -29,7 +29,7 @@ export function AIMessageInput({
           }
         }}
         placeholder="Savolingizni yozing..."
-        className="min-h-[52px] flex-1 resize-none rounded-xl border border-slate-700/30/80 bg-[#131b2e] px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-inner shadow-black/10 placeholder:text-slate-500 transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500"
+        className="min-h-[52px] flex-1 resize-none rounded-xl border border-slate-700/30 bg-[#131b2e] px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-inner shadow-black/10 placeholder:text-slate-500 transition-all focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:bg-slate-800/50 disabled:text-slate-600"
       />
       <button
         type="button"

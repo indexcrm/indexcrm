@@ -361,7 +361,7 @@ export function PosTerminal() {
     <PosShell>
       <div className="grid h-[calc(100vh-3.5rem)] grid-cols-1 overflow-hidden lg:grid-cols-[34%_1fr_380px] gap-px">
         <div className="no-print flex min-h-0 flex-col bg-[#131b2e]">
-          <div className="grid gap-3 border-b border-slate-700/30/80 bg-gradient-to-b from-slate-50 to-white p-4">
+          <div className="grid gap-3 border-b border-slate-700/30 bg-gradient-to-b from-slate-800 to-slate-900 p-4">
             <BarcodeInput busy={scanLoading} onScan={handleScan} />
             <OfflineSyncStatus />
           </div>
@@ -401,7 +401,7 @@ export function PosTerminal() {
           />
         </div>
 
-        <aside className="flex min-h-0 flex-col bg-slate-50/80 shadow-sm">
+        <aside className="flex min-h-0 flex-col bg-slate-800/50/80 shadow-sm">
           <CashierSessionPanel />
           <CustomerPicker
             selectedCustomer={selectedCustomer}

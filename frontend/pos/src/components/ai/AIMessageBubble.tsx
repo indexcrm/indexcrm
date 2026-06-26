@@ -41,7 +41,7 @@ export function AIMessageBubble({
         className={`max-w-[min(680px,92%)] rounded-2xl px-4 py-3 shadow-sm ${
           isUser
             ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-blue-500/20"
-            : "border border-slate-700/30/80 bg-[#131b2e] text-slate-100"
+            : "border border-slate-700/30 bg-[#131b2e] text-slate-100"
         }`}
       >
         <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider">

@@ -34,7 +34,7 @@ export function AISessionSidebar({
   onSelect,
 }: AISessionSidebarProps) {
   return (
-    <aside className="grid gap-3 rounded-2xl border border-slate-700/30/80 bg-[#131b2e] p-3.5 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+    <aside className="grid gap-3 rounded-2xl border border-slate-700/30 bg-[#131b2e] p-3.5 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-xs font-bold tracking-wide text-slate-600">
           <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-sm">
@@ -46,7 +46,7 @@ export function AISessionSidebar({
           type="button"
           onClick={onRefresh}
           disabled={isLoading}
-          className="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 transition-all active:scale-90"
+          className="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-800/50 disabled:cursor-not-allowed disabled:opacity-60 transition-all active:scale-90"
           aria-label="Chatlarni yangilash"
         >
           <RefreshCw
@@ -75,7 +75,7 @@ export function AISessionSidebar({
                 className={`rounded-xl border p-3 text-left transition-all duration-150 ${
                   active
                     ? "border-blue-200 bg-blue-50 shadow-sm"
-                    : "border-slate-700/30/80 bg-[#131b2e] hover:bg-slate-50 hover:border-slate-300"
+                    : "border-slate-700/30 bg-[#131b2e] hover:bg-slate-800/50 hover:border-slate-600"
                 }`}
               >
                 <div className="line-clamp-1 text-sm font-bold text-slate-100">

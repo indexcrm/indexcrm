@@ -202,7 +202,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 className={`inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg border px-2.5 text-[11px] font-bold transition-all ${
                   active
                     ? "border-cyan-200 bg-cyan-50 text-cyan-700 shadow-sm"
-                    : "border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-50"
+                    : "border-slate-700/30 bg-[#131b2e] text-slate-400 hover:bg-slate-800/50"
                 }`}
               >
                 <Icon aria-hidden="true" className="h-3.5 w-3.5" />

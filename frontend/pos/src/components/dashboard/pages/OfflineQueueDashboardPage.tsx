@@ -99,7 +99,7 @@ function failureClassName(sale: PendingSaleRecord) {
   const failureClass =
     sale.failureClass ?? (sale.status === "failed" ? "unknown" : undefined);
   if (!failureClass) {
-    return "border-slate-700/30 bg-slate-50 text-slate-400";
+    return "border-slate-700/30 bg-slate-800/50 text-slate-400";
   }
   if (
     failureClass === "stock_conflict" ||
@@ -117,7 +117,7 @@ function failureClassName(sale: PendingSaleRecord) {
   if (failureClass === "backend_unavailable") {
     return "border-blue-200 bg-blue-50 text-blue-800";
   }
-  return "border-slate-700/30 bg-slate-50 text-slate-300";
+  return "border-slate-700/30 bg-slate-800/50 text-slate-300";
 }
 
 function paymentSummary(sale: PendingSaleRecord) {
@@ -415,7 +415,7 @@ export function OfflineQueueDashboardPage() {
                     : "Sinxronlash faol bo'lganda tiklash bloklangan"
                   : "Eskirgan sinxronlashlarni tiklash"
               }
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-800/50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Clock3 aria-hidden="true" className="h-4 w-4" />
               Tiklash {summary.staleSyncing > 0 ? `(${summary.staleSyncing})` : ""}
@@ -424,7 +424,7 @@ export function OfflineQueueDashboardPage() {
               type="button"
               disabled={summary.synced === 0}
               onClick={() => void handleClearSynced()}
-              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-800/50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Trash2 aria-hidden="true" className="h-4 w-4" />
               Yuborilganlarni tozalash
@@ -555,7 +555,7 @@ export function OfflineQueueDashboardPage() {
                 className={`min-h-9 rounded border px-3 text-xs font-black uppercase ${
                   filter === item.value
                     ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-slate-700/30 bg-[#131b2e] text-slate-600 hover:bg-slate-50"
+                    : "border-slate-700/30 bg-[#131b2e] text-slate-600 hover:bg-slate-800/50"
                 }`}
               >
                 {item.label}
@@ -584,7 +584,7 @@ export function OfflineQueueDashboardPage() {
           <div className="overflow-x-auto">
             <table className="min-w-full border-collapse text-sm">
               <thead>
-                <tr className="border-b border-slate-700/30 bg-slate-50 text-xs uppercase text-slate-400">
+                <tr className="border-b border-slate-700/30 bg-slate-800/50 text-xs uppercase text-slate-400">
                   <th className="px-4 py-3 text-left font-black">Havola</th>
                   <th className="px-4 py-3 text-left font-black">Holat</th>
                   <th className="px-4 py-3 text-left font-black">Yaratildi</th>
@@ -601,7 +601,7 @@ export function OfflineQueueDashboardPage() {
                   <tr
                     key={sale.id}
                     onClick={() => setSelectedId(sale.id)}
-                    className={`cursor-pointer border-b border-slate-100 last:border-0 hover:bg-slate-50 ${
+                    className={`cursor-pointer border-b border-slate-100 last:border-0 hover:bg-slate-800/50 ${
                       selectedSale?.id === sale.id ? "bg-blue-50/70" : ""
                     }`}
                   >
@@ -700,7 +700,7 @@ export function OfflineQueueDashboardPage() {
                     "Lokal havola",
                   )
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-800/50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Havolani nusxalash
@@ -710,7 +710,7 @@ export function OfflineQueueDashboardPage() {
                 onClick={() =>
                   void handleCopy(selectedSale.idempotencyKey, "Idempotency kaliti")
                 }
-                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-50"
+                className="inline-flex min-h-10 items-center gap-2 rounded border border-cyan-500/10 bg-[#131b2e] px-3 text-sm font-black text-slate-300 hover:bg-slate-800/50"
               >
                 <Copy aria-hidden="true" className="h-4 w-4" />
                 Kalitni nusxalash
@@ -821,7 +821,7 @@ export function OfflineQueueDashboardPage() {
                 {selectedSale.cartItems.map((item) => (
                   <div
                     key={`${selectedSale.id}-${item.productId}`}
-                    className="rounded border border-slate-700/30 bg-slate-50 p-3"
+                    className="rounded border border-slate-700/30 bg-slate-800/50 p-3"
                   >
                     <div className="font-black text-slate-800">
                       {item.productName || item.productId}
@@ -848,7 +848,7 @@ export function OfflineQueueDashboardPage() {
                 {selectedSale.payments.map((payment, index) => (
                   <div
                     key={`${selectedSale.id}-${payment.payment_method}-${index}`}
-                    className="flex items-center justify-between rounded border border-slate-700/30 bg-slate-50 p-3 text-sm font-bold"
+                    className="flex items-center justify-between rounded border border-slate-700/30 bg-slate-800/50 p-3 text-sm font-bold"
                   >
                     <span>{payment.payment_method}</span>
                     <span>{formatMoney(payment.amount)}</span>

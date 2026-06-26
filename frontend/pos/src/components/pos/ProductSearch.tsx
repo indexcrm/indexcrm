@@ -76,7 +76,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
 
   return (
     <section className="flex min-h-0 flex-1 flex-col bg-[#131b2e]">
-      <div className="border-b border-slate-700/30/80 p-4 bg-[#131b2e]">
+      <div className="border-b border-slate-700/30 p-4 bg-[#131b2e]">
         <div className="relative group">
           <div className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/20 transition-all duration-200 group-focus-within:scale-110">
             <Search aria-hidden="true" className="h-4 w-4" />
@@ -98,7 +98,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
             className="h-14 w-full rounded-2xl border-0 bg-[#131b2e] pl-12 pr-16 text-lg font-bold tracking-tight text-slate-100 shadow-lg shadow-slate-200/50 ring-1 ring-inset ring-slate-200 transition-all duration-200 placeholder:text-slate-500 placeholder:font-medium focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:shadow-xl focus:shadow-blue-500/10 outline-none"
           />
           <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className="inline-flex items-center gap-1 rounded-lg border border-slate-700/30 bg-slate-50/80 px-2 py-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-widest shadow-sm">
+            <span className="inline-flex items-center gap-1 rounded-lg border border-slate-700/30 bg-slate-800/50/80 px-2 py-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-widest shadow-sm">
               <kbd className="bg-slate-200 rounded px-1 py-0.5 text-slate-400">F3</kbd>
               <span className="hidden sm:inline">Qidiruv</span>
             </span>
@@ -129,7 +129,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto p-3">
         {!isSearchReady ? (
-          <div className="flex min-h-48 flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-700/30 bg-slate-50/50 p-6 text-center shadow-sm">
+          <div className="flex min-h-48 flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-700/30 bg-slate-800/50/50 p-6 text-center shadow-sm">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-slate-500 mb-3 shadow-sm">
               <Search aria-hidden="true" className="h-6 w-6" />
             </div>
@@ -184,7 +184,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
               <button
                 key={product.id}
                 onClick={() => onSelectProduct(product)}
-                className="flex min-h-[5.5rem] flex-col items-start justify-between rounded-2xl border border-slate-700/30/70 bg-[#131b2e] p-3.5 text-left shadow-sm transition-all duration-150 hover:border-blue-400/60 hover:shadow-md hover:shadow-blue-500/5 hover:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 active:scale-[0.98]"
+                className="flex min-h-[5.5rem] flex-col items-start justify-between rounded-2xl border border-slate-700/30 bg-[#131b2e] p-3.5 text-left shadow-sm transition-all duration-150 hover:border-blue-400/60 hover:shadow-md hover:shadow-blue-500/5 hover:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 active:scale-[0.98]"
               >
                 <div className="w-full">
                   <span className="line-clamp-2 text-sm font-bold text-slate-100 leading-snug">

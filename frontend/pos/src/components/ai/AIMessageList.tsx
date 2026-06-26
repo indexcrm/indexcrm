@@ -64,7 +64,7 @@ export function AIMessageList({
       ))}
       {isLoading ? (
         <div className="flex justify-start animate-fade-in">
-          <div className="inline-flex items-center gap-2.5 rounded-2xl border border-slate-700/30/80 bg-[#131b2e] px-4 py-3 text-sm font-semibold text-slate-400 shadow-sm">
+          <div className="inline-flex items-center gap-2.5 rounded-2xl border border-slate-700/30 bg-[#131b2e] px-4 py-3 text-sm font-semibold text-slate-400 shadow-sm">
             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
               <Loader2 aria-hidden="true" className="h-3.5 w-3.5 animate-spin text-blue-600" />
             </div>
