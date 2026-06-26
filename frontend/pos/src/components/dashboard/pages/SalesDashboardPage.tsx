@@ -59,7 +59,7 @@ export function SalesDashboardPage() {
           title="Umumiy savdo"
           value={formatMoney(pickNumber(report, ["gross_sales", "net_sales"]))}
           icon={ReceiptText}
-          tone="indigo"
+          tone="emerald"
         />
         <StatCard
           title="To'langan"

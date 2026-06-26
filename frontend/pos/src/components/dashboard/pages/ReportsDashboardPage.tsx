@@ -96,7 +96,7 @@ export function ReportsDashboardPage() {
           title="Sof savdo"
           value={formatMoney(pickNumber(profit, ["net_sales"]))}
           icon={BarChart3}
-          tone="indigo"
+          tone="emerald"
         />
         <StatCard
           title="Foyda"

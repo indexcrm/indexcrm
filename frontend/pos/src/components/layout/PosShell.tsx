@@ -24,16 +24,16 @@ export function PosShell({ children }: PosShellProps) {
       <header className="no-print flex h-14 shrink-0 items-center justify-between bg-gradient-to-r from-[#0f172a]/95 via-[#111827]/95 to-[#0f172a]/95 px-5 text-white border-b border-white/[0.04] backdrop-blur-lg">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/20 ring-1 ring-white/10">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white text-sm font-black shadow-lg shadow-emerald-500/20 ring-1 ring-white/10">
               I
             </div>
             <span className="text-xl font-black tracking-tight text-white">
               <span className="text-white">INDEX</span>
-              <span className="text-indigo-400 font-light ml-1">POS</span>
+              <span className="text-emerald-400 font-light ml-1">POS</span>
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-2">
-            <span className="rounded-lg bg-indigo-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-indigo-400 border border-indigo-400/20 uppercase shadow-sm">
+            <span className="rounded-lg bg-emerald-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-emerald-400 border border-emerald-400/20 uppercase shadow-sm">
               Kassir
             </span>
           </div>
@@ -42,7 +42,7 @@ export function PosShell({ children }: PosShellProps) {
           <div className="hidden items-center gap-3 text-slate-400 lg:flex">
             {cashierName || cashierEmail ? (
               <div className="flex items-center gap-2">
-                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
+                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
                   {(cashierName || cashierEmail || "?").charAt(0).toUpperCase()}
                 </div>
                 <span className="text-white font-semibold tracking-tight text-sm max-w-[140px] truncate">{cashierName || cashierEmail}</span>

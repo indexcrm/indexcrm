@@ -97,9 +97,9 @@ export function DashboardOverview() {
 
   return (
     <div className="grid gap-5">
-      <div className="rounded-2xl border border-indigo-100/50 bg-gradient-to-br from-white to-indigo-50/30 p-5 shadow-soft">
+      <div className="rounded-2xl border border-emerald-100/50 bg-gradient-to-br from-white to-emerald-50/30 p-5 shadow-soft">
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15">
             <Sparkles aria-hidden="true" className="h-6 w-6" />
           </div>
           <div>
@@ -118,7 +118,7 @@ export function DashboardOverview() {
           value={formatMoney(todayRevenue)}
           description={`${todayCount} yakunlangan chek`}
           icon={ReceiptText}
-          tone="indigo"
+          tone="emerald"
         />
         <StatCard
           title="Buyurtmalar"
