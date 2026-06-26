@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, EyeOff, Loader2, ShieldCheck } from "lucide-react";
+import { Eye, EyeOff, Loader2, ShieldCheck, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { type FormEvent, useState } from "react";
 
@@ -81,23 +81,25 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-[#111827] to-slate-900 px-4">
-      <div className="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40" />
-      <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-slate-900 px-4">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-40 -top-40 h-96 w-96 animate-float rounded-full bg-indigo-500/10 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-80 w-80 animate-float rounded-full bg-indigo-500/8 blur-3xl" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute left-1/3 top-1/4 h-64 w-64 animate-float rounded-full bg-purple-500/5 blur-3xl" style={{ animationDelay: "0.8s" }} />
+      </div>
       <div className="w-full max-w-md animate-fade-in">
         <div className="mb-8 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-xl font-black shadow-lg shadow-indigo-500/25 mb-4">
-            I
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-2xl font-black shadow-xl shadow-indigo-500/25 ring-1 ring-white/10">
+            <Sparkles aria-hidden="true" className="h-7 w-7" />
           </div>
-          <h1 className="text-2xl font-black tracking-tight text-white">
-            INDEX <span className="text-indigo-400 font-light">POS</span>
+          <h1 className="text-3xl font-black tracking-tight text-white">
+            INDEX <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent font-light">POS</span>
           </h1>
-          <p className="mt-1.5 text-sm font-medium text-slate-400">
+          <p className="mt-2 text-sm font-medium text-slate-400">
             Davom etish uchun tizimga kiring
           </p>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/10 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/[0.06] bg-white/[0.04] p-8 shadow-2xl shadow-black/20 backdrop-blur-xl">
           <form className="grid gap-5" onSubmit={handleSubmit}>
             <label className="grid gap-1.5" htmlFor="login-email">
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
@@ -108,7 +110,7 @@ export default function LoginPage() {
                 type="text"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-indigo-500/50 focus:bg-white/10 focus:ring-2 focus:ring-indigo-500/20 outline-none"
+                className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-indigo-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-indigo-500/20 focus:shadow-glow outline-none"
                 placeholder="tillomahmudjonov"
                 autoComplete="username"
                 required
@@ -128,7 +130,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-200 focus:border-indigo-500/50 focus:bg-white/10 focus:ring-2 focus:ring-indigo-500/20 outline-none"
+                  className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-indigo-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-indigo-500/20 focus:shadow-glow outline-none"
                   placeholder="Parolni kiriting"
                   autoComplete="current-password"
                   required
@@ -162,7 +164,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-5 text-sm font-bold text-white shadow-lg shadow-indigo-500/25 transition-all duration-200 hover:from-indigo-400 hover:to-indigo-500 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-5 text-sm font-bold text-white shadow-lg shadow-indigo-500/20 transition-all duration-300 hover:from-indigo-400 hover:to-indigo-500 hover:shadow-indigo-500/30 hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:shadow-none outline-none focus:ring-2 focus:ring-indigo-500/40"
             >
               {loading ? (
                 <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
@@ -170,7 +172,7 @@ export default function LoginPage() {
               <span>{loading ? "Kirilmoqda..." : "Kirish"}</span>
             </button>
           </form>
-          <div className="mt-6 border-t border-white/5 pt-4 text-center">
+          <div className="mt-6 border-t border-white/[0.06] pt-5 text-center">
             <p className="text-[11px] font-medium text-slate-500">
               Demo: admin@example.com / Admin12345
             </p>

@@ -9,19 +9,19 @@ type StatCardProps = {
 };
 
 const toneClasses = {
-  indigo: "from-indigo-50 to-indigo-100/30 border-indigo-200/50",
-  green: "from-emerald-50 to-emerald-100/30 border-emerald-200/50",
-  amber: "from-amber-50 to-amber-100/30 border-amber-200/50",
-  rose: "from-rose-50 to-rose-100/30 border-rose-200/50",
-  slate: "from-slate-50 to-slate-100/30 border-indigo-100/50",
+  indigo: "from-indigo-50/80 to-indigo-100/20 border-indigo-200/40",
+  green: "from-emerald-50/80 to-emerald-100/20 border-emerald-200/40",
+  amber: "from-amber-50/80 to-amber-100/20 border-amber-200/40",
+  rose: "from-rose-50/80 to-rose-100/20 border-rose-200/40",
+  slate: "from-slate-50/80 to-indigo-50/20 border-indigo-100/40",
 };
 
 const iconBgClasses = {
-  indigo: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15",
-  green: "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15",
-  amber: "bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/15",
-  rose: "bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15",
-  slate: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15",
+  indigo: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15 ring-1 ring-white/20",
+  green: "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20",
+  amber: "bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/15 ring-1 ring-white/20",
+  rose: "bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15 ring-1 ring-white/20",
+  slate: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15 ring-1 ring-white/20",
 };
 
 const valueClasses = {
@@ -41,7 +41,7 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <section 
-      className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-elevated ${toneClasses[tone]}`}
+      className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-elevated hover:border-opacity-60 ${toneClasses[tone]}`}
     >
       <div className="relative z-10 flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
@@ -61,7 +61,7 @@ export function StatCard({
           {description}
         </p>
       ) : null}
-      <div className="absolute -bottom-5 -right-5 opacity-[0.04] z-0">
+      <div className="absolute -bottom-5 -right-5 opacity-[0.03] z-0">
          <Icon className="h-28 w-28" />
       </div>
     </section>

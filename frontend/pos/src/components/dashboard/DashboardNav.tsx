@@ -122,9 +122,9 @@ export function DashboardNav({ children }: DashboardNavProps) {
 
   return (
     <div className="min-h-screen bg-[#f4f5f9] text-slate-900">
-      <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-white/5 bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white lg:block shadow-2xl shadow-black/10 z-20">
-        <div className="flex h-14 items-center gap-3 border-b border-white/5 px-5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/25">
+      <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-white/[0.04] bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white lg:block shadow-2xl shadow-black/10 z-20">
+        <div className="flex h-14 items-center gap-3 border-b border-white/[0.04] px-5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-sm font-black shadow-lg shadow-indigo-500/20 ring-1 ring-white/10">
             I
           </div>
           <div>
@@ -137,7 +137,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
             </div>
           </div>
         </div>
-        <nav className="grid gap-1 p-3">
+        <nav className="grid gap-0.5 p-3">
           {visibleNavItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
@@ -147,20 +147,20 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 href={item.href}
                 className={`group flex h-10 items-center gap-3 rounded-xl px-3.5 text-sm font-semibold transition-all duration-200 ${
                   active
-                    ? "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/25"
-                    : "text-slate-400 hover:bg-white/5 hover:text-slate-200"
+                    ? "bg-gradient-to-r from-indigo-500/90 to-indigo-600/90 text-white shadow-lg shadow-indigo-500/15"
+                    : "text-slate-400 hover:bg-white/[0.04] hover:text-slate-200"
                 }`}
               >
-                <Icon aria-hidden="true" className={`h-4.5 w-4.5 transition-transform duration-200 ${active ? 'scale-110' : 'group-hover:scale-110'}`} />
+                <Icon aria-hidden="true" className={`h-4.5 w-4.5 transition-all duration-200 ${active ? 'scale-110' : 'group-hover:scale-110'}`} />
                 <span>{active ? <span className="font-bold">{item.label}</span> : item.label}</span>
                 {active ? (
-                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-indigo-400 shadow-sm shadow-indigo-400/50" />
+                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-white/60 shadow-sm shadow-white/20" />
                 ) : null}
               </a>
             );
           })}
         </nav>
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/5">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/[0.04]">
           <div className="flex items-center gap-2 text-[11px] text-slate-500">
             <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/30" />
             INDEX POS v0.1.0
@@ -169,7 +169,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
       </aside>
 
       <div className="lg:pl-64">
-        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-indigo-500/5 bg-white/90 backdrop-blur-md px-4 shadow-soft lg:px-6">
+        <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-indigo-100/50 bg-white/80 px-4 shadow-soft backdrop-blur-xl lg:px-6">
           <div className="min-w-0 flex items-center gap-3">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-[10px] font-black shadow-sm lg:hidden">
               I
@@ -184,7 +184,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
           <div className="flex shrink-0 items-center gap-2">
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-3.5 py-2 text-xs font-bold text-indigo-600 shadow-sm transition-all hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl border border-indigo-100/60 bg-white px-3.5 py-2 text-xs font-bold text-indigo-600 shadow-sm transition-all duration-200 hover:bg-indigo-50 hover:border-indigo-200 hover:shadow-md active:scale-95"
             >
               POS ochish
             </a>
@@ -224,7 +224,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
                 <div className="flex justify-center border-t border-indigo-100/50 p-4">
                   <a
                     href="/"
-                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-4 py-2.5 text-sm font-bold text-indigo-600 shadow-sm hover:bg-indigo-50 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-100/60 bg-white px-4 py-2.5 text-sm font-bold text-indigo-600 shadow-sm transition-all duration-200 hover:bg-indigo-50 hover:shadow-md active:scale-95"
                   >
                     <Lock aria-hidden="true" className="h-4 w-4" />
                     POS ochish
