@@ -255,7 +255,7 @@ export function AIChatPage() {
           <div className="flex min-h-0 flex-col">
             <div className="flex items-center justify-between gap-3 border-b border-slate-200/80 px-4 py-3 bg-white/80">
               <div className="flex min-w-0 items-center gap-2.5">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white shadow-lg shadow-violet-500/20">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/20">
                   <Bot aria-hidden="true" className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">

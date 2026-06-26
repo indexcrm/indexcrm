@@ -180,7 +180,7 @@ export function ProductsDashboardPage() {
               onChange={(event) => setSearch(event.target.value)}
               aria-label="Mahsulotlarni qidirish"
               placeholder="Mahsulotlarni qidirish"
-              className="h-11 rounded-xl border border-indigo-100/50 px-3.5 font-semibold shadow-soft"
+              className="h-11 rounded-xl border border-teal-100/50 px-3.5 font-semibold shadow-soft"
             />
             <IconButton
               type="button"
@@ -215,12 +215,12 @@ export function ProductsDashboardPage() {
         title="Yuklangan mahsulotlar"
         value={String(productsQuery.data?.count ?? products.length)}
         icon={PackageSearch}
-        tone="indigo"
+        tone="teal"
       />
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-indigo-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-teal-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -239,7 +239,7 @@ export function ProductsDashboardPage() {
               <input
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -247,7 +247,7 @@ export function ProductsDashboardPage() {
               <select
                 value={form.category}
                 onChange={(event) => setForm({ ...form, category: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">Kategoriya tanlang</option>
                 {categories.map((category) => (
@@ -262,7 +262,7 @@ export function ProductsDashboardPage() {
               <select
                 value={form.unit}
                 onChange={(event) => setForm({ ...form, unit: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">Birlik tanlang</option>
                 {units.map((unit) => (
@@ -277,7 +277,7 @@ export function ProductsDashboardPage() {
               <input
                 value={form.sku}
                 onChange={(event) => setForm({ ...form, sku: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -285,7 +285,7 @@ export function ProductsDashboardPage() {
               <input
                 value={form.barcode}
                 onChange={(event) => setForm({ ...form, barcode: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -293,7 +293,7 @@ export function ProductsDashboardPage() {
               <select
                 value={form.brand}
                 onChange={(event) => setForm({ ...form, brand: event.target.value })}
-                className="h-11 rounded-xl border border-indigo-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">Brendsiz</option>
                 {brands.map((brand) => (
@@ -311,7 +311,7 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, cost_price: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -322,7 +322,7 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, selling_price: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-indigo-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-teal-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">

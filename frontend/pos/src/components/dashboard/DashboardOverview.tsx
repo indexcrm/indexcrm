@@ -97,9 +97,9 @@ export function DashboardOverview() {
 
   return (
     <div className="grid gap-5">
-      <div className="rounded-2xl border border-indigo-100/50 bg-gradient-to-br from-white to-indigo-50/30 p-5 shadow-soft">
+      <div className="rounded-2xl border border-teal-100/50 bg-gradient-to-br from-white to-teal-50/30 p-5 shadow-soft">
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/15">
             <Sparkles aria-hidden="true" className="h-6 w-6" />
           </div>
           <div>
@@ -118,7 +118,7 @@ export function DashboardOverview() {
           value={formatMoney(todayRevenue)}
           description={`${todayCount} yakunlangan chek`}
           icon={ReceiptText}
-          tone="indigo"
+          tone="teal"
         />
         <StatCard
           title="Buyurtmalar"
@@ -131,7 +131,7 @@ export function DashboardOverview() {
           value={formatMoney(pickNumber(summary?.today_profit, ["profit"]))}
           description="Qaytarish, kirim va xarajatlardan keyin"
           icon={TrendingUp}
-          tone="green"
+          tone="cyan"
         />
         <StatCard
           title="Kam qoldiq"
@@ -164,7 +164,7 @@ export function DashboardOverview() {
           value={formatMoney(cashboxTotal)}
           description={`${cashboxes.length} kassa yozuvi`}
           icon={Landmark}
-          tone="green"
+          tone="cyan"
         />
         <StatCard
           title="Ochiq smenalar"
