@@ -47,7 +47,7 @@ export function AIMessageBubble({
         <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider">
           <Icon
             aria-hidden="true"
-            className={`h-3.5 w-3.5 ${isUser ? "text-blue-100" : "text-violet-600"}`}
+            className={`h-3.5 w-3.5 ${isUser ? "text-blue-100" : "text-orange-600"}`}
           />
           <span className={isUser ? "text-blue-100" : "text-slate-400"}>
             {label}

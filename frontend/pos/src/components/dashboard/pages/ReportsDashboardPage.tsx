@@ -96,13 +96,13 @@ export function ReportsDashboardPage() {
           title="Sof savdo"
           value={formatMoney(pickNumber(profit, ["net_sales"]))}
           icon={BarChart3}
-          tone="indigo"
+          tone="amber"
         />
         <StatCard
           title="Foyda"
           value={formatMoney(pickNumber(profit, ["profit"]))}
           icon={FileSpreadsheet}
-          tone="green"
+          tone="emerald"
         />
         <StatCard
           title="Xarajatlar"
