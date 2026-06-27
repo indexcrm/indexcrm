@@ -12,6 +12,9 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import { ChartPlaceholder } from "@/components/dashboard/ChartPlaceholder";
 import { DataTable } from "@/components/dashboard/DataTable";
 import { ErrorState } from "@/components/dashboard/ErrorState";
@@ -42,6 +45,13 @@ export function DashboardOverview() {
   const summaryQuery = useDashboardSummary();
   const today = todayIsoDate();
   const cashierQuery = useCashierActivityDashboard(today, today);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (role === "manager") {
+      router.replace("/dashboard/inventory/receive");
+    }
+  }, [role, router]);
 
   if (summaryQuery.isLoading) {
     return (

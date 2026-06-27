@@ -9,6 +9,7 @@ import {
   Lock,
   LayoutDashboard,
   PackageSearch,
+  PackagePlus,
   ReceiptText,
   Settings,
   ShieldCheck,
@@ -25,21 +26,9 @@ import { useAuthStore } from "@/stores/authStore";
 
 const navItems = [
   {
-    href: "/dashboard",
-    label: "Umumiy",
-    icon: LayoutDashboard,
-    roles: ["owner", "admin", "manager"],
-  },
-  {
-    href: "/dashboard/sales",
-    label: "Savdolar",
-    icon: ShoppingCart,
-    roles: ["owner", "admin", "manager"],
-  },
-  {
-    href: "/dashboard/products",
-    label: "Mahsulotlar",
-    icon: PackageSearch,
+    href: "/dashboard/inventory/receive",
+    label: "Tavar qo'shish",
+    icon: PackagePlus,
     roles: ["owner", "admin", "manager"],
   },
   {
@@ -49,36 +38,11 @@ const navItems = [
     roles: ["owner", "admin", "manager"],
   },
   {
-    href: "/dashboard/customers",
-    label: "Mijozlar",
-    icon: UsersRound,
+    href: "/dashboard/ai",
+    label: "AI Yordamchi",
+    icon: Bot,
     roles: ["owner", "admin", "manager"],
   },
-  {
-    href: "/dashboard/suppliers",
-    label: "Yetkazib beruvchilar",
-    icon: Truck,
-    roles: ["owner", "admin", "manager"],
-  },
-  {
-    href: "/dashboard/finance",
-    label: "Moliya",
-    icon: CircleDollarSign,
-    roles: ["owner", "admin"],
-  },
-  {
-    href: "/dashboard/reports",
-    label: "Hisobotlar",
-    icon: BarChart3,
-    roles: ["owner", "admin", "manager"],
-  },
-  {
-    href: "/dashboard/cashier-activity",
-    label: "Kassirlar",
-    icon: ReceiptText,
-    roles: ["owner", "admin", "manager"],
-  },
-
   {
     href: "/dashboard/settings",
     label: "Sozlamalar",
@@ -92,9 +56,10 @@ type DashboardNavProps = {
 };
 
 function isActive(pathname: string, href: string) {
-  return href === "/dashboard"
-    ? pathname === href
-    : pathname === href || pathname.startsWith(`${href}/`);
+  if (href === "/dashboard" || href === "/dashboard/inventory") {
+    return pathname === href;
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 function canUseNavItem(role: string | undefined, item: (typeof navItems)[number]) {
@@ -130,10 +95,10 @@ export function DashboardNav({ children }: DashboardNavProps) {
           <div>
             <div className="text-sm font-black tracking-tight">
               <span className="text-white">INDEX</span>{" "}
-              <span className="text-blue-400 font-light">{roleLabel === "Egasi" ? "Ega" : roleLabel}</span>
+              <span className="text-blue-400 font-light">Menejer</span>
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
-              {roleLabel} ko'rinishi
+              Boshqaruv paneli
             </div>
           </div>
         </div>
@@ -177,17 +142,11 @@ export function DashboardNav({ children }: DashboardNavProps) {
             <div>
               <div className="text-base font-black tracking-tight text-slate-900">{pageLabel}</div>
               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                {roleLabel} boshqaruv paneli
+                Boshqaruv paneli
               </div>
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-sm transition-all hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 active:scale-95"
-            >
-              POS ochish
-            </a>
             <LogoutButton />
           </div>
         </header>
@@ -222,13 +181,7 @@ export function DashboardNav({ children }: DashboardNavProps) {
                   description="Joriy rolingiz bu boshqaruv sahifasiga kirish huquqiga ega emas."
                 />
                 <div className="flex justify-center border-t border-slate-100 p-4">
-                  <a
-                    href="/"
-                    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition-all"
-                  >
-                    <Lock aria-hidden="true" className="h-4 w-4" />
-                    POS ochish
-                  </a>
+                  <LogoutButton />
                 </div>
               </section>
             </div>
