@@ -6,17 +6,17 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
-          950: "#052e16",
+          50: "#fef2f2",
+          100: "#fee2e2",
+          200: "#fecaca",
+          300: "#fca5a5",
+          400: "#f87171",
+          500: "#dc2626",
+          600: "#b91c1c",
+          700: "#991b1b",
+          800: "#7f1d1d",
+          900: "#450a0a",
+          950: "#450a0a",
         },
         surface: {
           DEFAULT: "#f8fafc",
@@ -26,13 +26,13 @@ const config: Config = {
         },
       },
       boxShadow: {
-        panel: "0 1px 2px rgba(34, 197, 94, 0.06)",
-        card: "0 1px 3px 0 rgba(34, 197, 94, 0.04), 0 1px 2px -1px rgba(34, 197, 94, 0.03)",
+        panel: "0 1px 2px rgba(220, 38, 38, 0.06)",
+        card: "0 1px 3px 0 rgba(220, 38, 38, 0.04), 0 1px 2px -1px rgba(220, 38, 38, 0.03)",
         elevated:
-          "0 4px 6px -1px rgba(34, 197, 94, 0.06), 0 2px 4px -2px rgba(34, 197, 94, 0.04)",
-        input: "0 1px 2px rgba(34, 197, 94, 0.03)",
-        soft: "0 2px 8px rgba(34, 197, 94, 0.06), 0 1px 2px rgba(34, 197, 94, 0.04)",
-        glow: "0 0 20px rgba(34, 197, 94, 0.12)",
+          "0 4px 6px -1px rgba(220, 38, 38, 0.06), 0 2px 4px -2px rgba(220, 38, 38, 0.04)",
+        input: "0 1px 2px rgba(220, 38, 38, 0.03)",
+        soft: "0 2px 8px rgba(220, 38, 38, 0.06), 0 1px 2px rgba(220, 38, 38, 0.04)",
+        glow: "0 0 20px rgba(220, 38, 38, 0.12)",
       },
       height: {
         18: "4.5rem",
@@ -77,7 +77,7 @@ const config: Config = {
       },
       backgroundImage: {
         "shimmer":
-          "linear-gradient(90deg, transparent 0%, rgba(34,197,94,0.03) 50%, transparent 100%)",
+          "linear-gradient(90deg, transparent 0%, rgba(220,38,38,0.03) 50%, transparent 100%)",
       },
     },
   },

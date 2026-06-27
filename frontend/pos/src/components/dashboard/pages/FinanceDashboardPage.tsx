@@ -148,7 +148,7 @@ export function FinanceDashboardPage() {
           title="Foyda"
           value={formatMoney(pickNumber(profit, ["profit"]))}
           icon={CircleDollarSign}
-          tone="green"
+          tone="rose"
         />
         <StatCard
           title="Xarajatlar"
@@ -160,13 +160,13 @@ export function FinanceDashboardPage() {
           title="Kassalar"
           value={String(cashboxes.length)}
           icon={Landmark}
-          tone="emerald"
+          tone="red"
         />
       </div>
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-emerald-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-red-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -185,7 +185,7 @@ export function FinanceDashboardPage() {
               <select
                 value={form.branch}
                 onChange={(event) => setForm({ ...form, branch: event.target.value })}
-                className="h-11 rounded-xl border border-emerald-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">
                   {branchesQuery.isFetching ? "Filiallar yuklanmoqda" : "Filialni tanlang"}
@@ -202,7 +202,7 @@ export function FinanceDashboardPage() {
               <input
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
@@ -235,7 +235,7 @@ export function FinanceDashboardPage() {
           />
         </form>
       ) : formMessage ? (
-        <div className="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900">
+        <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
           {formMessage}
         </div>
       ) : null}

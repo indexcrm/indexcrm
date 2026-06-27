@@ -8,7 +8,7 @@ type DateFilterProps = {
 
 export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
   return (
-    <div className="flex flex-col gap-2 rounded-xl border border-emerald-100/40 bg-white p-3 shadow-soft sm:flex-row sm:items-end">
+    <div className="flex flex-col gap-2 rounded-xl border border-red-100/40 bg-white p-3 shadow-soft sm:flex-row sm:items-end">
       <label className="block">
         <span className="mb-1 block text-xs font-black uppercase text-slate-500">
           Dan
@@ -19,7 +19,7 @@ export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
           onChange={(event) =>
             onChange({ dateFrom: event.target.value, dateTo })
           }
-          className="h-10 rounded-lg border border-emerald-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 focus:shadow-glow outline-none"
+          className="h-10 rounded-lg border border-red-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-red-500/50 focus:ring-2 focus:ring-red-500/20 focus:shadow-glow outline-none"
         />
       </label>
       <label className="block">
@@ -32,7 +32,7 @@ export function DateFilter({ dateFrom, dateTo, onChange }: DateFilterProps) {
           onChange={(event) =>
             onChange({ dateFrom, dateTo: event.target.value })
           }
-          className="h-10 rounded-lg border border-emerald-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 focus:shadow-glow outline-none"
+          className="h-10 rounded-lg border border-red-200/50 px-3 font-semibold text-slate-700 transition-all duration-200 focus:border-red-500/50 focus:ring-2 focus:ring-red-500/20 focus:shadow-glow outline-none"
         />
       </label>
     </div>

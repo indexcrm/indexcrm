@@ -36,11 +36,11 @@ export function CartSummary({
             {formatMoney(subtotal)}
           </div>
         </div>
-        <div className="rounded-xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 to-emerald-50/50 p-3 shadow-sm ring-1 ring-emerald-200/50">
-          <div className="text-[10px] font-black uppercase tracking-wider text-emerald-600">
+        <div className="rounded-xl border border-red-200/80 bg-gradient-to-br from-red-50 to-red-50/50 p-3 shadow-sm ring-1 ring-red-200/50">
+          <div className="text-[10px] font-black uppercase tracking-wider text-red-600">
             Jami
           </div>
-          <div className="text-2xl font-black text-emerald-800 mt-0.5">
+          <div className="text-2xl font-black text-red-800 mt-0.5">
             {formatMoney(total)}
           </div>
         </div>

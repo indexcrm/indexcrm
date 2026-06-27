@@ -449,13 +449,13 @@ export function CashierSessionPanel() {
           shiftLoading
             ? "border-blue-200 bg-blue-50 text-blue-800"
             : sessionReady
-              ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+              ? "border-red-200 bg-red-50 text-red-800"
               : "border-amber-200 bg-amber-50 text-amber-900"
         }`}
       >
         <div className={`flex h-5 w-5 items-center justify-center rounded-full ${
           shiftLoading ? "bg-blue-200/60" :
-          sessionReady ? "bg-emerald-200/60" : "bg-amber-200/60"
+          sessionReady ? "bg-red-200/60" : "bg-amber-200/60"
         }`}>
           {shiftLoading ? (
             <Loader2 aria-hidden="true" className="h-3 w-3 animate-spin" />
@@ -488,7 +488,7 @@ export function CashierSessionPanel() {
         </div>
         <div className="flex justify-between items-center py-1 pt-2 mt-1 border-t border-slate-200/60">
           <span className="text-slate-400 font-medium text-xs">Smena</span>
-          <span className={`font-bold px-2.5 py-0.5 rounded-full text-[10px] tracking-wide ${activeShiftId ? "bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-200" : "bg-rose-50 text-rose-600 ring-1 ring-inset ring-rose-200"}`}>{activeShiftId ? "Ochiq" : "Yo'q"}</span>
+          <span className={`font-bold px-2.5 py-0.5 rounded-full text-[10px] tracking-wide ${activeShiftId ? "bg-red-100 text-red-700 ring-1 ring-inset ring-red-200" : "bg-rose-50 text-rose-600 ring-1 ring-inset ring-rose-200"}`}>{activeShiftId ? "Ochiq" : "Yo'q"}</span>
         </div>
       </div>
       {setupGuidance && !shiftLoading ? (
