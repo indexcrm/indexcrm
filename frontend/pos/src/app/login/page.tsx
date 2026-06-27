@@ -83,17 +83,17 @@ export default function LoginPage() {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-slate-900 px-4">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 -top-40 h-96 w-96 animate-float rounded-full bg-emerald-500/10 blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 h-80 w-80 animate-float rounded-full bg-emerald-500/8 blur-3xl" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute -left-40 -top-40 h-96 w-96 animate-float rounded-full bg-rose-500/10 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-80 w-80 animate-float rounded-full bg-rose-500/8 blur-3xl" style={{ animationDelay: "1.5s" }} />
         <div className="absolute left-1/3 top-1/4 h-64 w-64 animate-float rounded-full bg-purple-500/5 blur-3xl" style={{ animationDelay: "0.8s" }} />
       </div>
       <div className="w-full max-w-md animate-fade-in">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white text-2xl font-black shadow-xl shadow-emerald-500/25 ring-1 ring-white/10">
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-rose-500 to-rose-600 text-white text-2xl font-black shadow-xl shadow-rose-500/25 ring-1 ring-white/10">
             <Sparkles aria-hidden="true" className="h-7 w-7" />
           </div>
           <h1 className="text-3xl font-black tracking-tight text-white">
-            INDEX <span className="bg-gradient-to-r from-emerald-400 to-purple-400 bg-clip-text text-transparent font-light">POS</span>
+            INDEX <span className="bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent font-light">POS</span>
           </h1>
           <p className="mt-2 text-sm font-medium text-slate-400">
             Davom etish uchun tizimga kiring
@@ -110,7 +110,7 @@ export default function LoginPage() {
                 type="text"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-emerald-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 focus:shadow-glow outline-none"
+                className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-rose-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-rose-500/20 focus:shadow-glow outline-none"
                 placeholder="tillomahmudjonov"
                 autoComplete="username"
                 required
@@ -130,7 +130,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-emerald-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 focus:shadow-glow outline-none"
+                  className="h-12 w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 pr-12 text-sm font-semibold text-white placeholder-slate-500 shadow-inner shadow-black/5 transition-all duration-300 focus:border-rose-500/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-rose-500/20 focus:shadow-glow outline-none"
                   placeholder="Parolni kiriting"
                   autoComplete="current-password"
                   required
@@ -164,7 +164,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:from-emerald-400 hover:to-emerald-500 hover:shadow-emerald-500/30 hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:shadow-none outline-none focus:ring-2 focus:ring-emerald-500/40"
+              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 px-5 text-sm font-bold text-white shadow-lg shadow-rose-500/20 transition-all duration-300 hover:from-rose-400 hover:to-rose-500 hover:shadow-rose-500/30 hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:shadow-none outline-none focus:ring-2 focus:ring-rose-500/40"
             >
               {loading ? (
                 <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />

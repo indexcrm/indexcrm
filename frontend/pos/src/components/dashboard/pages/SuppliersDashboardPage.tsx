@@ -130,7 +130,7 @@ export function SuppliersDashboardPage() {
               onChange={(event) => setSearch(event.target.value)}
               aria-label="Yetkazib beruvchilarni qidirish"
               placeholder="Yetkazib beruvchilarni qidirish"
-              className="h-11 rounded-xl border border-emerald-100/50 px-3.5 font-semibold shadow-soft"
+              className="h-11 rounded-xl border border-rose-100/50 px-3.5 font-semibold shadow-soft"
             />
             <IconButton
               type="button"
@@ -150,7 +150,7 @@ export function SuppliersDashboardPage() {
           title="Yetkazuvchilar"
           value={String(suppliersQuery.data?.suppliers.count ?? suppliers.length)}
           icon={Truck}
-          tone="emerald"
+          tone="coral"
         />
         <StatCard
           title="Qarz hisoblari"
@@ -162,7 +162,7 @@ export function SuppliersDashboardPage() {
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-emerald-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-rose-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -183,7 +183,7 @@ export function SuppliersDashboardPage() {
                 onChange={(event) =>
                   setForm({ ...form, company_name: event.target.value })
                 }
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-rose-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -193,7 +193,7 @@ export function SuppliersDashboardPage() {
                 onChange={(event) =>
                   setForm({ ...form, full_name: event.target.value })
                 }
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-rose-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -203,7 +203,7 @@ export function SuppliersDashboardPage() {
                 onChange={(event) => setForm({ ...form, phone: event.target.value })}
                 inputMode="tel"
                 autoComplete="tel"
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-rose-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -213,7 +213,7 @@ export function SuppliersDashboardPage() {
                 onChange={(event) => setForm({ ...form, email: event.target.value })}
                 type="email"
                 autoComplete="email"
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-rose-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -223,7 +223,7 @@ export function SuppliersDashboardPage() {
                 onChange={(event) =>
                   setForm({ ...form, inn_or_tax_number: event.target.value })
                 }
-                className="h-11 rounded-xl border border-emerald-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-rose-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
@@ -253,7 +253,7 @@ export function SuppliersDashboardPage() {
           />
         </form>
       ) : formMessage ? (
-        <div className="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900">
+        <div className="rounded border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-bold text-rose-900">
           {formMessage}
         </div>
       ) : null}
