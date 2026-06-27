@@ -56,7 +56,7 @@ export function DataTable<T>({
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-emerald-100/20">
+            <tbody className="divide-y divide-purple-100/20">
               {rows.map((row, rowIndex) => (
                 <tr
                   key={rowKey ? rowKey(row, rowIndex) : rowIndex}
