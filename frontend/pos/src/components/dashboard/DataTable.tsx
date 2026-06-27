@@ -33,9 +33,9 @@ export function DataTable<T>({
   emptyDescription,
 }: DataTableProps<T>) {
   return (
-    <section className="rounded-2xl border border-emerald-100/40 bg-white shadow-soft transition-all duration-300 hover:shadow-elevated">
+    <section className="rounded-2xl border border-purple-100/40 bg-white shadow-soft transition-all duration-300 hover:shadow-elevated">
       {title ? (
-        <div className="border-b border-emerald-100/40 px-5 py-4">
+        <div className="border-b border-purple-100/40 px-5 py-4">
           <h2 className="text-base font-bold tracking-tight text-slate-900">{title}</h2>
         </div>
       ) : null}
@@ -45,7 +45,7 @@ export function DataTable<T>({
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-emerald-100/40 bg-gradient-to-r from-emerald-50/40 to-emerald-50/20 text-[10px] uppercase tracking-wider text-slate-400">
+              <tr className="border-b border-purple-100/40 bg-gradient-to-r from-purple-50/40 to-purple-50/20 text-[10px] uppercase tracking-wider text-slate-400">
                 {columns.map((column) => (
                   <th
                     key={column.key}
@@ -60,7 +60,7 @@ export function DataTable<T>({
               {rows.map((row, rowIndex) => (
                 <tr
                   key={rowKey ? rowKey(row, rowIndex) : rowIndex}
-                  className="transition-colors duration-150 hover:bg-emerald-50/30"
+                  className="transition-colors duration-150 hover:bg-purple-50/30"
                 >
                   {columns.map((column) => (
                     <td

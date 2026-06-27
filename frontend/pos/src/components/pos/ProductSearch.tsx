@@ -194,7 +194,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
                     {product.sku || product.barcode || "-"}
                   </span>
                 </div>
-                <span className="mt-2 text-base font-black text-emerald-700">
+                <span className="mt-2 text-base font-black text-purple-700">
                   {formatMoney(product.selling_price)}
                 </span>
               </button>

@@ -14,7 +14,7 @@ export function ChartPlaceholder({
   const maxValue = Math.max(...values, 0);
 
   return (
-    <section className="rounded-2xl border border-emerald-100/40 bg-white p-5 shadow-soft transition-all duration-300 hover:shadow-elevated">
+    <section className="rounded-2xl border border-purple-100/40 bg-white p-5 shadow-soft transition-all duration-300 hover:shadow-elevated">
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
           <h2 className="text-base font-bold tracking-tight text-slate-900">{title}</h2>
@@ -22,24 +22,24 @@ export function ChartPlaceholder({
             <p className="mt-0.5 text-xs font-medium text-slate-400">{description}</p>
           ) : null}
         </div>
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/15 ring-1 ring-white/20">
           <BarChart3 aria-hidden="true" className="h-4.5 w-4.5" />
         </div>
       </div>
       {values.length > 0 && maxValue > 0 ? (
-        <div className="flex h-48 items-end gap-2 rounded-xl border border-emerald-100/40 bg-gradient-to-b from-emerald-50/20 to-white p-4 shadow-inner">
+        <div className="flex h-48 items-end gap-2 rounded-xl border border-purple-100/40 bg-gradient-to-b from-purple-50/20 to-white p-4 shadow-inner">
           {values.map((value, index) => (
             <div
               key={index}
-              className="flex-1 rounded-t-lg bg-gradient-to-t from-emerald-500 to-emerald-400 shadow-sm shadow-emerald-500/10 transition-all duration-300 hover:from-emerald-400 hover:to-emerald-300 hover:shadow-md"
+              className="flex-1 rounded-t-lg bg-gradient-to-t from-purple-500 to-purple-400 shadow-sm shadow-purple-500/10 transition-all duration-300 hover:from-purple-400 hover:to-purple-300 hover:shadow-md"
               style={{ height: `${Math.max(8, (value / maxValue) * 100)}%` }}
             />
           ))}
         </div>
       ) : (
-        <div className="flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-emerald-100/40 bg-gradient-to-b from-emerald-50/20 to-white p-4 text-center">
+        <div className="flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-purple-100/40 bg-gradient-to-b from-purple-50/20 to-white p-4 text-center">
           <div>
-            <BarChart3 aria-hidden="true" className="mx-auto h-8 w-8 text-emerald-300" />
+            <BarChart3 aria-hidden="true" className="mx-auto h-8 w-8 text-purple-300" />
             <div className="mt-3 text-sm font-bold text-slate-500">
               Diagramma ma'lumoti hali mavjud emas
             </div>
