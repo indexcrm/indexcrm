@@ -4,12 +4,12 @@
 
 :root {
   color-scheme: light;
-  --bg-subtle: #f0fdf4;
+  --bg-subtle: #fefce8;
   --bg-card: #ffffff;
-  --border-subtle: rgba(34, 197, 94, 0.08);
-  --primary: #22c55e;
-  --primary-soft: rgba(34, 197, 94, 0.08);
-  --primary-glow: rgba(34, 197, 94, 0.15);
+  --border-subtle: rgba(234, 179, 8, 0.08);
+  --primary: #eab308;
+  --primary-soft: rgba(234, 179, 8, 0.08);
+  --primary-glow: rgba(234, 179, 8, 0.15);
 }
 
 * {
@@ -33,8 +33,8 @@ body {
 }
 
 ::selection {
-  background-color: rgba(34, 197, 94, 0.2);
-  color: #052e16;
+  background-color: rgba(234, 179, 8, 0.2);
+  color: #422006;
 }
 
 ::-webkit-scrollbar {
@@ -47,12 +47,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 197, 94, 0.15);
+  background: rgba(234, 179, 8, 0.15);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 197, 94, 0.25);
+  background: rgba(234, 179, 8, 0.25);
 }
 
 button, input, textarea, select {
@@ -63,7 +63,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #22c55e;
+  outline: 2px solid #eab308;
   outline-offset: 2px;
 }
 

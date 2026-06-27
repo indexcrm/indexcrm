@@ -55,13 +55,13 @@ export function SettingsDashboardPage() {
           title="Akkaunt"
           value={user?.email ?? "Yuklanmagan"}
           icon={UserRound}
-          tone="emerald"
+          tone="yellow"
         />
         <StatCard
           title="Rol"
           value={user?.role ?? "-"}
           icon={ShieldCheck}
-          tone="green"
+          tone="amber"
         />
         <StatCard
           title="Token"

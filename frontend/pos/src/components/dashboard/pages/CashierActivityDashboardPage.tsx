@@ -54,7 +54,7 @@ export function CashierActivityDashboardPage() {
           title="Kassirlar"
           value={String(performance.length)}
           icon={UsersRound}
-          tone="emerald"
+          tone="yellow"
         />
         <StatCard
           title="Ochiq smenalar"
@@ -71,7 +71,7 @@ export function CashierActivityDashboardPage() {
             ),
           )}
           icon={ReceiptText}
-          tone="green"
+          tone="amber"
         />
       </div>
       <DataTable
