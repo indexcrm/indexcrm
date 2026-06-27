@@ -40,11 +40,11 @@ export function CustomerPicker({
         ) : null}
       </div>
       {selectedCustomer ? (
-        <div className="rounded-xl border border-emerald-200/70 bg-gradient-to-br from-emerald-50 to-emerald-50/30 p-3.5 shadow-sm">
-          <div className="font-bold text-emerald-950 text-sm">
+        <div className="rounded-xl border border-blue-200/70 bg-gradient-to-br from-blue-50 to-blue-50/30 p-3.5 shadow-sm">
+          <div className="font-bold text-blue-950 text-sm">
             {selectedCustomer.full_name}
           </div>
-          <div className="text-xs font-semibold text-emerald-600 mt-0.5">
+          <div className="text-xs font-semibold text-blue-600 mt-0.5">
             {selectedCustomer.phone || "Telefon yo'q"}
           </div>
         </div>

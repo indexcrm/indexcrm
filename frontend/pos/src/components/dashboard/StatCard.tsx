@@ -5,28 +5,28 @@ type StatCardProps = {
   value: string;
   description?: string;
   icon: LucideIcon;
-  tone?: "emerald" | "green" | "amber" | "rose" | "slate";
+  tone?: "blue" | "indigo" | "amber" | "rose" | "slate";
 };
 
 const toneClasses = {
-  emerald: "from-emerald-50/80 to-emerald-100/20 border-emerald-200/40",
-  green: "from-green-50/80 to-green-100/20 border-green-200/40",
+  blue: "from-blue-50/80 to-blue-100/20 border-blue-200/40",
+  indigo: "from-indigo-50/80 to-indigo-100/20 border-indigo-200/40",
   amber: "from-amber-50/80 to-amber-100/20 border-amber-200/40",
   rose: "from-rose-50/80 to-rose-100/20 border-rose-200/40",
-  slate: "from-slate-50/80 to-emerald-50/20 border-emerald-100/40",
+  slate: "from-slate-50/80 to-blue-50/20 border-blue-100/40",
 };
 
 const iconBgClasses = {
-  emerald: "bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20",
-  green: "bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg shadow-green-500/15 ring-1 ring-white/20",
+  blue: "bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg shadow-blue-600/15 ring-1 ring-white/20",
+  indigo: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/15 ring-1 ring-white/20",
   amber: "bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/15 ring-1 ring-white/20",
   rose: "bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-500/15 ring-1 ring-white/20",
-  slate: "bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-lg shadow-emerald-500/15 ring-1 ring-white/20",
+  slate: "bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg shadow-blue-600/15 ring-1 ring-white/20",
 };
 
 const valueClasses = {
-  emerald: "text-emerald-900",
-  green: "text-green-900",
+  blue: "text-blue-900",
+  indigo: "text-indigo-900",
   amber: "text-amber-900",
   rose: "text-rose-900",
   slate: "text-slate-900",
