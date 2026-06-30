@@ -302,33 +302,49 @@ export function ProductsDashboardPage() {
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
-              Hajmi (litr)
-              <select
-                value={form.volume_preset}
-                onChange={(event) => setForm({ ...form, volume_preset: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
-              >
-                <option value="">Tanlamaslik</option>
-                <option value="0.5">0.5 L</option>
-                <option value="0.9">0.9 L</option>
-                <option value="1">1.0 L</option>
-                <option value="1.5">1.5 L</option>
-                <option value="2">2.0 L</option>
-                <option value="Boshqa...">Boshqa...</option>
-              </select>
-            </label>
-            {form.volume_preset === "Boshqa..." && (
-              <label className="grid gap-1 text-sm font-bold text-slate-700">
-                BOSHQA HAJM (LITR) *
-                <input
-                  value={form.volume_custom}
-                  onChange={(event) => setForm({ ...form, volume_custom: event.target.value })}
-                  placeholder="0.33"
-                  className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
-                />
-              </label>
-            )}
+            {(() => {
+              const selUnit = units.find((u) => u.id === form.unit);
+              if (!selUnit) return null;
+              const sn = selUnit.short_name.toLowerCase();
+              const isWeight = ["kg", "g", "gr", "tonna", "t"].includes(sn);
+              const isVolume = ["l", "litr", "ml", "liters"].includes(sn);
+              const fieldLabel = isWeight ? "Og'irligi" : isVolume ? "Hajmi" : "Miqdori";
+              const unitStr = selUnit.short_name.toUpperCase();
+              const presets = isVolume
+                ? ["0.5", "0.9", "1.0", "1.5", "2.0"]
+                : isWeight
+                ? ["0.5", "1.0", "1.5", "2.0", "3.0", "5.0", "10.0"]
+                : ["1", "2", "3", "5", "10", "20", "50", "100"];
+              return (
+                <>
+                  <label className="grid gap-1 text-sm font-bold text-slate-700">
+                    {fieldLabel} ({selUnit.short_name})
+                    <select
+                      value={form.volume_preset}
+                      onChange={(event) => setForm({ ...form, volume_preset: event.target.value })}
+                      className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
+                    >
+                      <option value="">Tanlamaslik</option>
+                      {presets.map((p) => (
+                        <option key={p} value={p}>{p} {unitStr}</option>
+                      ))}
+                      <option value="Boshqa...">Boshqa...</option>
+                    </select>
+                  </label>
+                  {form.volume_preset === "Boshqa..." && (
+                    <label className="grid gap-1 text-sm font-bold text-slate-700">
+                      BOSHQA {fieldLabel.toUpperCase()} ({selUnit.short_name.toUpperCase()}) *
+                      <input
+                        value={form.volume_custom}
+                        onChange={(event) => setForm({ ...form, volume_custom: event.target.value })}
+                        placeholder={`0.33 ${unitStr}`}
+                        className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                      />
+                    </label>
+                  )}
+                </>
+              );
+            })()}
 
             <label className="grid gap-1 text-sm font-bold text-slate-700">
               Barcode
