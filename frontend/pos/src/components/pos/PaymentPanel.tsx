@@ -96,7 +96,7 @@ export function PaymentPanel({
   return (
     <section className="no-print border-b border-slate-200/80 bg-white p-4">
       <div className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-500">
-        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-700 text-white shadow-sm">
+        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-orange-600 to-orange-700 text-white shadow-sm">
           <Banknote aria-hidden="true" className="h-3.5 w-3.5" />
         </div>
         To'lov
@@ -162,12 +162,12 @@ export function PaymentPanel({
       <div
         className={`mt-3 flex min-h-10 items-center gap-2.5 rounded-xl border px-3.5 py-2.5 text-xs font-bold shadow-sm transition-all ${
           canComplete
-            ? "border-red-200 bg-red-50 text-red-800"
+            ? "border-orange-200 bg-orange-50 text-orange-800"
             : "border-amber-200 bg-amber-50 text-amber-900"
         }`}
       >
         <div className={`flex h-5 w-5 items-center justify-center rounded-full ${
-          canComplete ? "bg-red-200/60" : "bg-amber-200/60"
+          canComplete ? "bg-orange-200/60" : "bg-amber-200/60"
         }`}>
           {canComplete ? (
             <CheckCircle2 aria-hidden="true" className="h-3 w-3" />
@@ -198,7 +198,7 @@ export function PaymentPanel({
         tone="success"
         onClick={submitPayment}
         disabled={!canComplete}
-        className="mt-3 h-14 w-full text-sm font-bold rounded-xl shadow-lg shadow-red-500/20"
+        className="mt-3 h-14 w-full text-sm font-bold rounded-xl shadow-lg shadow-orange-500/20"
       />
     </section>
   );

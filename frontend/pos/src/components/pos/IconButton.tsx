@@ -10,10 +10,10 @@ type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const tones = {
-  neutral: "border-red-100/50 bg-white text-slate-700 hover:bg-red-50 hover:border-red-200 shadow-soft",
-  primary: "border-red-600 bg-red-600 text-white hover:bg-red-700 hover:shadow-md shadow-soft",
-  danger: "border-rose-600 bg-rose-600 text-white hover:bg-rose-700 hover:shadow-md shadow-soft",
-  success: "border-red-600 bg-red-600 text-white hover:bg-red-700 hover:shadow-md shadow-soft",
+  neutral: "border-orange-100/50 bg-white text-slate-700 hover:bg-orange-50 hover:border-orange-200 shadow-soft",
+  primary: "border-orange-600 bg-orange-600 text-white hover:bg-orange-700 hover:shadow-md shadow-soft",
+  danger: "border-amber-600 bg-amber-600 text-white hover:bg-amber-700 hover:shadow-md shadow-soft",
+  success: "border-orange-600 bg-orange-600 text-white hover:bg-orange-700 hover:shadow-md shadow-soft",
   warning: "border-amber-300 bg-amber-200 text-amber-950 hover:bg-amber-300 hover:shadow-md shadow-soft",
 };
 

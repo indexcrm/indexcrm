@@ -99,7 +99,7 @@ export function InventoryDashboardPage() {
           title="Ombordagi mahsulotlar"
           value={String(pickNumber(report, ["product_count"]))}
           icon={Boxes}
-          tone="red"
+          tone="orange"
         />
         <StatCard
           title="Qoldiq yozuvlari"
@@ -110,13 +110,13 @@ export function InventoryDashboardPage() {
           title="Kam qoldiq"
           value={String(pickNumber(lowStock, ["low_stock_count"]))}
           icon={AlertTriangle}
-          tone="rose"
+          tone="amber"
         />
       </div>
       {adjustment ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-red-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-orange-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
@@ -146,7 +146,7 @@ export function InventoryDashboardPage() {
                     movementType: event.target.value as "IN" | "OUT",
                   })
                 }
-                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="IN">Qoldiqni oshirish</option>
                 <option value="OUT">Qoldiqni kamaytirish</option>
@@ -160,7 +160,7 @@ export function InventoryDashboardPage() {
                   setAdjustment({ ...adjustment, quantity: event.target.value })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700 md:col-span-2">
@@ -171,7 +171,7 @@ export function InventoryDashboardPage() {
                   setAdjustment({ ...adjustment, note: event.target.value })
                 }
                 placeholder="Inventarizatsiya tuzatishi"
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
           </div>
@@ -190,7 +190,7 @@ export function InventoryDashboardPage() {
           />
         </form>
       ) : formMessage ? (
-        <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
+        <div className="rounded border border-orange-200 bg-orange-50 px-3 py-2 text-sm font-bold text-orange-900">
           {formMessage}
         </div>
       ) : null}

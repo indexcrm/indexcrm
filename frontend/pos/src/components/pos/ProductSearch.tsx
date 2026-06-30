@@ -157,20 +157,20 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
         ) : null}
 
         {isSearchReady && productsQuery.isError ? (
-          <div className="flex min-h-48 flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-rose-50 to-rose-50/30 p-6 text-center shadow-sm ring-1 ring-rose-200/60">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-100 to-rose-200 text-rose-600 mb-3 shadow-sm">
+          <div className="flex min-h-48 flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-amber-50 to-amber-50/30 p-6 text-center shadow-sm ring-1 ring-amber-200/60">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-amber-200 text-amber-600 mb-3 shadow-sm">
               <AlertCircle aria-hidden="true" className="h-6 w-6" />
             </div>
-            <div className="text-base font-black text-rose-900 tracking-tight">
+            <div className="text-base font-black text-amber-900 tracking-tight">
               Mahsulotlarni yuklab bo'lmadi
             </div>
-            <div className="mt-1 text-sm font-semibold text-rose-600">
+            <div className="mt-1 text-sm font-semibold text-amber-600">
               Aloqani tekshirib, qayta urinib ko'ring.
             </div>
             <button
               type="button"
               onClick={() => void productsQuery.refetch()}
-              className="mt-4 inline-flex items-center gap-2 rounded-xl border border-rose-200 bg-white px-4 py-2.5 text-sm font-bold text-rose-700 shadow-sm hover:bg-rose-50 transition-all active:scale-95"
+              className="mt-4 inline-flex items-center gap-2 rounded-xl border border-amber-200 bg-white px-4 py-2.5 text-sm font-bold text-amber-700 shadow-sm hover:bg-amber-50 transition-all active:scale-95"
             >
               <RotateCw aria-hidden="true" className="h-4 w-4" />
               Qayta urinish
@@ -194,7 +194,7 @@ export function ProductSearch({ onSelectProduct }: ProductSearchProps) {
                     {product.sku || product.barcode || "-"}
                   </span>
                 </div>
-                <span className="mt-2 text-base font-black text-red-700">
+                <span className="mt-2 text-base font-black text-orange-700">
                   {formatMoney(product.selling_price)}
                 </span>
               </button>

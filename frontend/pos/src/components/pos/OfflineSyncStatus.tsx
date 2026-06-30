@@ -22,10 +22,10 @@ function formatQueuedTime(value: string) {
 
 function statusClassName(status: PendingSaleRecord["status"]) {
   if (status === "synced") {
-    return "bg-red-100 text-red-800";
+    return "bg-orange-100 text-orange-800";
   }
   if (status === "failed") {
-    return "bg-rose-100 text-rose-800";
+    return "bg-amber-100 text-amber-800";
   }
   if (status === "syncing") {
     return "bg-blue-100 text-blue-800";
@@ -122,7 +122,7 @@ export function OfflineSyncStatus() {
     <div
       className={`grid min-h-10 gap-2 rounded border px-3 py-2 text-xs font-black ${
         connectivity.status === "online"
-          ? "border-red-200 bg-red-50 text-red-800"
+          ? "border-orange-200 bg-orange-50 text-orange-800"
           : "border-amber-300 bg-amber-50 text-amber-900"
       }`}
     >
@@ -179,7 +179,7 @@ export function OfflineSyncStatus() {
           className={`flex items-start gap-1.5 text-[11px] ${
             lastResult.failed > 0 || lastResult.skipped
               ? "text-amber-900"
-              : "text-red-800"
+              : "text-orange-800"
           }`}
         >
           <AlertCircle aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 shrink-0" />
@@ -221,7 +221,7 @@ export function OfflineSyncStatus() {
                 ) : null}
               </div>
               {sale.lastError ? (
-                <div className="text-rose-800">
+                <div className="text-amber-800">
                   {sale.lastError}
                 </div>
               ) : null}

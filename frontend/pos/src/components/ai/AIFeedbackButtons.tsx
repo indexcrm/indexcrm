@@ -25,7 +25,7 @@ export function AIFeedbackButtons({
         type="button"
         disabled={disabled || isSaving}
         onClick={() => onFeedback("good")}
-        className="inline-flex h-7 items-center gap-1.5 rounded-lg border border-red-200/70 bg-red-50 px-2.5 text-[10px] font-bold text-red-700 hover:bg-red-100 active:scale-90 transition-all disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex h-7 items-center gap-1.5 rounded-lg border border-orange-200/70 bg-orange-50 px-2.5 text-[10px] font-bold text-orange-700 hover:bg-orange-100 active:scale-90 transition-all disabled:cursor-not-allowed disabled:opacity-50"
       >
         <ThumbsUp aria-hidden="true" className="h-3.5 w-3.5" />
         Foydali
@@ -34,7 +34,7 @@ export function AIFeedbackButtons({
         type="button"
         disabled={disabled || isSaving}
         onClick={() => onFeedback("bad")}
-        className="inline-flex h-7 items-center gap-1.5 rounded-lg border border-rose-200/70 bg-rose-50 px-2.5 text-[10px] font-bold text-rose-700 hover:bg-rose-100 active:scale-90 transition-all disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex h-7 items-center gap-1.5 rounded-lg border border-amber-200/70 bg-amber-50 px-2.5 text-[10px] font-bold text-amber-700 hover:bg-amber-100 active:scale-90 transition-all disabled:cursor-not-allowed disabled:opacity-50"
       >
         <ThumbsDown aria-hidden="true" className="h-3.5 w-3.5" />
         Foydasiz
@@ -42,7 +42,7 @@ export function AIFeedbackButtons({
       {status.message ? (
         <span
           className={`text-[10px] font-semibold ${
-            status.state === "error" ? "text-rose-500" : "text-red-600"
+            status.state === "error" ? "text-amber-500" : "text-orange-600"
           }`}
         >
           {status.message}

@@ -220,7 +220,7 @@ export function ProductsDashboardPage() {
               onChange={(event) => setSearchInput(event.target.value)}
               aria-label="Mahsulotlarni qidirish"
               placeholder="Mahsulotlarni qidirish"
-              className="h-11 rounded-xl border border-red-100/50 px-3.5 font-semibold shadow-soft"
+              className="h-11 rounded-xl border border-orange-100/50 px-3.5 font-semibold shadow-soft"
             />
             <IconButton
               type="button"
@@ -257,12 +257,12 @@ export function ProductsDashboardPage() {
         title="Yuklangan mahsulotlar"
         value={String(productsQuery.data?.count ?? products.length)}
         icon={PackageSearch}
-        tone="red"
+        tone="orange"
       />
       {form ? (
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-red-100/40 bg-white p-5 shadow-soft"
+          className="rounded-xl border border-orange-100/40 bg-white p-5 shadow-soft"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-base font-black text-slate-950">
@@ -283,7 +283,7 @@ export function ProductsDashboardPage() {
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
                 placeholder="Mahsulot nomini kiriting"
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
 
@@ -292,7 +292,7 @@ export function ProductsDashboardPage() {
               <select
                 value={form.unit}
                 onChange={(event) => setForm({ ...form, unit: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 bg-white px-3.5 shadow-soft"
               >
                 <option value="">Birlik tanlang</option>
                 {units.map((unit) => (
@@ -322,7 +322,7 @@ export function ProductsDashboardPage() {
                     <select
                       value={form.volume_preset}
                       onChange={(event) => setForm({ ...form, volume_preset: event.target.value })}
-                      className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
+                      className="h-11 rounded-xl border border-orange-100/50 bg-white px-3.5 shadow-soft"
                     >
                       <option value="">Tanlamaslik</option>
                       {presets.map((p) => (
@@ -338,7 +338,7 @@ export function ProductsDashboardPage() {
                         value={form.volume_custom}
                         onChange={(event) => setForm({ ...form, volume_custom: event.target.value })}
                         placeholder={`0.33 ${unitStr}`}
-                        className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                        className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
                       />
                     </label>
                   )}
@@ -351,7 +351,7 @@ export function ProductsDashboardPage() {
               <input
                 value={form.barcode}
                 onChange={(event) => setForm({ ...form, barcode: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
 
@@ -366,7 +366,7 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, cost_price: formatPrice(form.cost_price) })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
@@ -380,7 +380,7 @@ export function ProductsDashboardPage() {
                   setForm({ ...form, selling_price: formatPrice(form.selling_price) })
                 }
                 inputMode="decimal"
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                className="h-11 rounded-xl border border-orange-100/50 px-3.5 shadow-soft"
               />
             </label>
             <label className="flex items-center gap-2 self-end text-sm font-bold text-slate-700">
@@ -396,7 +396,7 @@ export function ProductsDashboardPage() {
             </label>
           </div>
             {errorMessage ? (
-            <div className="mt-3 rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
+            <div className="mt-3 rounded border border-orange-200 bg-orange-50 px-3 py-2 text-sm font-bold text-orange-900">
               {errorMessage}
             </div>
           ) : null}
@@ -416,7 +416,7 @@ export function ProductsDashboardPage() {
           {successMessage}
         </div>
       ) : errorMessage && !form ? (
-        <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
+        <div className="rounded border border-orange-200 bg-orange-50 px-3 py-2 text-sm font-bold text-orange-900">
           {errorMessage}
         </div>
       ) : null}

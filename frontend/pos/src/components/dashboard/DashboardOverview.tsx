@@ -97,9 +97,9 @@ export function DashboardOverview() {
 
   return (
     <div className="grid gap-5">
-      <div className="rounded-2xl border border-red-100/50 bg-gradient-to-br from-white to-red-50/30 p-5 shadow-soft">
+      <div className="rounded-2xl border border-orange-100/50 bg-gradient-to-br from-white to-orange-50/30 p-5 shadow-soft">
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/15">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/15">
             <Sparkles aria-hidden="true" className="h-6 w-6" />
           </div>
           <div>
@@ -118,7 +118,7 @@ export function DashboardOverview() {
           value={formatMoney(todayRevenue)}
           description={`${todayCount} yakunlangan chek`}
           icon={ReceiptText}
-          tone="red"
+          tone="orange"
         />
         <StatCard
           title="Buyurtmalar"
@@ -131,14 +131,14 @@ export function DashboardOverview() {
           value={formatMoney(pickNumber(summary?.today_profit, ["profit"]))}
           description="Qaytarish, kirim va xarajatlardan keyin"
           icon={TrendingUp}
-          tone="rose"
+          tone="amber"
         />
         <StatCard
           title="Kam qoldiq"
           value={String(summary?.low_stock_count ?? 0)}
           description="Limitdan past mahsulotlar"
           icon={AlertTriangle}
-          tone="rose"
+          tone="amber"
         />
       </div>
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
@@ -164,7 +164,7 @@ export function DashboardOverview() {
           value={formatMoney(cashboxTotal)}
           description={`${cashboxes.length} kassa yozuvi`}
           icon={Landmark}
-          tone="rose"
+          tone="amber"
         />
         <StatCard
           title="Ochiq smenalar"

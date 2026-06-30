@@ -24,16 +24,16 @@ export function PosShell({ children }: PosShellProps) {
       <header className="no-print flex h-14 shrink-0 items-center justify-between bg-gradient-to-r from-[#0f172a]/95 via-[#111827]/95 to-[#0f172a]/95 px-5 text-white border-b border-white/[0.04] backdrop-blur-lg">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white text-sm font-black shadow-lg shadow-red-500/20 ring-1 ring-white/10">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white text-sm font-black shadow-lg shadow-orange-500/20 ring-1 ring-white/10">
               I
             </div>
             <span className="text-xl font-black tracking-tight text-white">
               <span className="text-white">INDEX</span>
-              <span className="text-red-400 font-light ml-1">POS</span>
+              <span className="text-orange-400 font-light ml-1">POS</span>
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-2">
-            <span className="rounded-lg bg-red-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-red-400 border border-red-400/20 uppercase shadow-sm">
+            <span className="rounded-lg bg-orange-500/10 px-2 py-0.5 text-[9px] font-black tracking-widest text-orange-400 border border-orange-400/20 uppercase shadow-sm">
               Kassir
             </span>
           </div>
@@ -42,7 +42,7 @@ export function PosShell({ children }: PosShellProps) {
           <div className="hidden items-center gap-3 text-slate-400 lg:flex">
             {cashierName || cashierEmail ? (
               <div className="flex items-center gap-2">
-                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
+                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
                   {(cashierName || cashierEmail || "?").charAt(0).toUpperCase()}
                 </div>
                 <span className="text-white font-semibold tracking-tight text-sm max-w-[140px] truncate">{cashierName || cashierEmail}</span>
@@ -50,19 +50,19 @@ export function PosShell({ children }: PosShellProps) {
             ) : null}
             <div className="flex items-center gap-3 text-xs">
               <div className="flex items-center gap-1.5">
-                <div className={`h-1.5 w-1.5 rounded-full ${branchId ? 'bg-red-400 shadow-red-400/40' : 'bg-slate-600'} ${branchId ? 'shadow-sm' : ''}`} />
+                <div className={`h-1.5 w-1.5 rounded-full ${branchId ? 'bg-orange-400 shadow-orange-400/40' : 'bg-slate-600'} ${branchId ? 'shadow-sm' : ''}`} />
                 <span className="text-slate-400">Filial</span>
                 <span className="text-slate-300 font-semibold">{branchId ? "Ha" : "Yo'q"}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className={`h-1.5 w-1.5 rounded-full ${warehouseId ? 'bg-red-400 shadow-red-400/40' : 'bg-slate-600'} ${warehouseId ? 'shadow-sm' : ''}`} />
+                <div className={`h-1.5 w-1.5 rounded-full ${warehouseId ? 'bg-orange-400 shadow-orange-400/40' : 'bg-slate-600'} ${warehouseId ? 'shadow-sm' : ''}`} />
                 <span className="text-slate-400">Ombor</span>
                 <span className="text-slate-300 font-semibold">{warehouseId ? "Ha" : "Yo'q"}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className={`h-1.5 w-1.5 rounded-full ${activeShiftId ? 'bg-red-400 shadow-red-400/40' : 'bg-slate-600'} ${activeShiftId ? 'shadow-sm' : ''}`} />
+                <div className={`h-1.5 w-1.5 rounded-full ${activeShiftId ? 'bg-orange-400 shadow-orange-400/40' : 'bg-slate-600'} ${activeShiftId ? 'shadow-sm' : ''}`} />
                 <span className="text-slate-400">Smena</span>
-                <span className={`font-semibold ${activeShiftId ? 'text-red-400' : 'text-slate-300'}`}>{activeShiftId ? "Ochiq" : "Yo'q"}</span>
+                <span className={`font-semibold ${activeShiftId ? 'text-orange-400' : 'text-slate-300'}`}>{activeShiftId ? "Ochiq" : "Yo'q"}</span>
               </div>
             </div>
           </div>
