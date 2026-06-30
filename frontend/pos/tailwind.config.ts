@@ -26,13 +26,13 @@ const config: Config = {
         },
       },
       boxShadow: {
-        panel: "0 1px 2px rgba(34, 197, 94, 0.06)",
-        card: "0 1px 3px 0 rgba(34, 197, 94, 0.04), 0 1px 2px -1px rgba(34, 197, 94, 0.03)",
+        panel: "0 1px 2px rgba(234, 88, 12, 0.06)",
+        card: "0 1px 3px 0 rgba(234, 88, 12, 0.04), 0 1px 2px -1px rgba(234, 88, 12, 0.03)",
         elevated:
-          "0 4px 6px -1px rgba(34, 197, 94, 0.06), 0 2px 4px -2px rgba(34, 197, 94, 0.04)",
-        input: "0 1px 2px rgba(34, 197, 94, 0.03)",
-        soft: "0 2px 8px rgba(34, 197, 94, 0.06), 0 1px 2px rgba(34, 197, 94, 0.04)",
-        glow: "0 0 20px rgba(34, 197, 94, 0.12)",
+          "0 4px 6px -1px rgba(234, 88, 12, 0.06), 0 2px 4px -2px rgba(234, 88, 12, 0.04)",
+        input: "0 1px 2px rgba(234, 88, 12, 0.03)",
+        soft: "0 2px 8px rgba(234, 88, 12, 0.06), 0 1px 2px rgba(234, 88, 12, 0.04)",
+        glow: "0 0 20px rgba(234, 88, 12, 0.12)",
       },
       height: {
         18: "4.5rem",
@@ -77,7 +77,7 @@ const config: Config = {
       },
       backgroundImage: {
         "shimmer":
-          "linear-gradient(90deg, transparent 0%, rgba(34,197,94,0.03) 50%, transparent 100%)",
+          "linear-gradient(90deg, transparent 0%, rgba(234,88,12,0.03) 50%, transparent 100%)",
       },
     },
   },
