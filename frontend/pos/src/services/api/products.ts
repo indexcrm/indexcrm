@@ -14,6 +14,7 @@ export type ProductPayload = {
   description?: string;
   barcode?: string | null;
   sku?: string | null;
+  volume?: string | null;
   cost_price: string;
   selling_price: string;
   min_price?: string;

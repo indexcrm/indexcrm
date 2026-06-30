@@ -1,7 +1,7 @@
 "use client";
 
 import { Edit3, PackagePlus, PackageSearch, Save, X } from "lucide-react";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { DataTable } from "@/components/dashboard/DataTable";
@@ -31,6 +31,8 @@ type ProductFormState = {
   unit: string;
   sku: string;
   barcode: string;
+  volume_preset: string;
+  volume_custom: string;
   cost_price: string;
   selling_price: string;
   is_active: boolean;
@@ -43,12 +45,35 @@ const emptyForm: ProductFormState = {
   unit: "",
   sku: "",
   barcode: "",
+  volume_preset: "",
+  volume_custom: "",
   cost_price: "0.00",
   selling_price: "0.00",
   is_active: true,
 };
 
+// Debounce hook: input o'zgarganda kechiktirib query yuboradi
+function useDebounce<T>(value: T, delayMs: number): T {
+  const [debounced, setDebounced] = useState<T>(value);
+  useEffect(() => {
+    const timer = setTimeout(() => setDebounced(value), delayMs);
+    return () => clearTimeout(timer);
+  }, [value, delayMs]);
+  return debounced;
+}
+
+function formatPrice(value: string): string {
+  if (!value) return "0.00";
+  const numericString = value.replace(/,/g, '.').replace(/[^\d.-]/g, '');
+  const parsed = parseFloat(numericString);
+  return isNaN(parsed) ? "0.00" : parsed.toFixed(2);
+}
+
 function formFromProduct(product: Product): ProductFormState {
+  const volFloat = product.volume ? parseFloat(product.volume) : null;
+  const isPreset = volFloat !== null && [0.5, 0.9, 1, 1.5, 2].includes(volFloat);
+  const presetValue = volFloat?.toString() ?? "";
+
   return {
     id: product.id,
     name: product.name,
@@ -57,6 +82,8 @@ function formFromProduct(product: Product): ProductFormState {
     unit: product.unit,
     sku: product.sku ?? "",
     barcode: product.barcode ?? "",
+    volume_preset: isPreset ? presetValue : (product.volume ? "Boshqa..." : ""),
+    volume_custom: !isPreset && product.volume ? product.volume.toString() : "",
     cost_price: product.cost_price,
     selling_price: product.selling_price,
     is_active: product.is_active,
@@ -64,15 +91,19 @@ function formFromProduct(product: Product): ProductFormState {
 }
 
 function buildPayload(form: ProductFormState): ProductPayload {
+  const rawVolume = form.volume_preset === "Boshqa..." ? form.volume_custom : form.volume_preset;
+  const cleanVolume = rawVolume ? rawVolume.replace(/,/g, '.').replace(/[^\d.]/g, '') : "";
+
   return {
     category: form.category,
     brand: form.brand || null,
     name: form.name.trim(),
     barcode: form.barcode.trim() || null,
     sku: form.sku.trim() || null,
-    cost_price: form.cost_price || "0.00",
-    selling_price: form.selling_price || "0.00",
-    min_price: form.cost_price || "0.00",
+    volume: cleanVolume || null,
+    cost_price: formatPrice(form.cost_price),
+    selling_price: formatPrice(form.selling_price),
+    min_price: formatPrice(form.cost_price),
     unit: form.unit,
     is_active: form.is_active,
   };
@@ -80,11 +111,19 @@ function buildPayload(form: ProductFormState): ProductPayload {
 
 export function ProductsDashboardPage() {
   const queryClient = useQueryClient();
-  const [search, setSearch] = useState("");
+  // Qidiruv so'zi (foydalanuvchi kiritayotgan)
+  const [searchInput, setSearchInput] = useState("");
+  // Debounce: 400ms kechikish bilan API ga yuboriladi
+  const debouncedSearch = useDebounce(searchInput, 400);
   const [form, setForm] = useState<ProductFormState | null>(null);
-  const [formMessage, setFormMessage] = useState("");
-  const productsQuery = useProductsDashboard(search);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  // Nomi inputiga focus ref
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
+  const productsQuery = useProductsDashboard(debouncedSearch);
   const products = productsQuery.data?.results ?? [];
+
   const categoriesQuery = useQuery({
     queryKey: ["catalog-categories"],
     queryFn: listCategories,
@@ -100,19 +139,16 @@ export function ProductsDashboardPage() {
   const productSetupLoading = categoriesQuery.isLoading || unitsQuery.isLoading;
   const productSetupUnavailable = categoriesQuery.isError || unitsQuery.isError;
 
+  // Forma ochilganda Nomi inputiga avtomatik focus
   useEffect(() => {
-    if (!form || form.id) {
-      return;
+    if (form && !form.id) {
+      // Yangi mahsulot formasi ochilganda focus
+      setTimeout(() => nameInputRef.current?.focus(), 50);
     }
-    if (!form.category && categories[0]) {
-      setForm((current) =>
-        current ? { ...current, category: categories[0].id } : current,
-      );
-    }
-    if (!form.unit && units[0]) {
-      setForm((current) => (current ? { ...current, unit: units[0].id } : current));
-    }
-  }, [categories, form, units]);
+  }, [form?.id, form !== null]);
+
+  // OLIB TASHLANDI: useEffect bu yerda qayta-qayta setForm qilib focus o'g'irlar edi
+  // Endi category va unit forma ochilganda bir marta o'rnatiladi
 
   const saveProduct = useMutation({
     mutationFn: (nextForm: ProductFormState) => {
@@ -123,27 +159,31 @@ export function ProductsDashboardPage() {
     },
     onSuccess: () => {
       setForm(null);
-      setFormMessage("Mahsulot saqlandi.");
+      setSearchInput("");
+      setSuccessMessage("✅ Mahsulot muvaffaqiyatli saqlandi!");
+      setErrorMessage("");
       void queryClient.invalidateQueries({ queryKey: ["dashboard-products"] });
       void queryClient.invalidateQueries({ queryKey: ["products"] });
+      void productsQuery.refetch();
     },
     onError: (error) => {
-      setFormMessage(formatApiError(error, "Mahsulotni saqlab bo'lmadi."));
+      setErrorMessage(formatApiError(error, "Mahsulotni saqlab bo'lmadi."));
     },
   });
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFormMessage("");
+    setErrorMessage("");
+    setSuccessMessage("");
     if (!form) {
       return;
     }
     if (!form.name.trim()) {
-      setFormMessage("Mahsulot nomi majburiy.");
+      setErrorMessage("Mahsulot nomi majburiy.");
       return;
     }
     if (!form.category || !form.unit) {
-      setFormMessage("Kategoriya va birlik majburiy. Avval seed_demo_data ishga tushiring.");
+      setErrorMessage("Kategoriya va birlik majburiy. Avval seed_demo_data ishga tushiring.");
       return;
     }
     saveProduct.mutate(form);
@@ -176,8 +216,8 @@ export function ProductsDashboardPage() {
         actions={
           <div className="flex flex-col gap-2 sm:flex-row">
             <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
+              value={searchInput}
+              onChange={(event) => setSearchInput(event.target.value)}
               aria-label="Mahsulotlarni qidirish"
               placeholder="Mahsulotlarni qidirish"
               className="h-11 rounded-xl border border-red-100/50 px-3.5 font-semibold shadow-soft"
@@ -189,23 +229,25 @@ export function ProductsDashboardPage() {
               tone="primary"
               onClick={() => {
                 if (productSetupLoading) {
-                  setFormMessage("Mahsulot sozlama ro'yxatlari hali yuklanmoqda. Birozdan keyin urinib ko'ring.");
+                  setErrorMessage("Mahsulot sozlama ro'yxatlari hali yuklanmoqda. Birozdan keyin urinib ko'ring.");
                   return;
                 }
                 if (productSetupUnavailable) {
-                  setFormMessage("Mahsulot sozlama ro'yxatlarini yuklab bo'lmadi. Backend ishlaganda qayta urinib ko'ring.");
+                  setErrorMessage("Mahsulot sozlama ro'yxatlarini yuklab bo'lmadi. Backend ishlaganda qayta urinib ko'ring.");
                   return;
                 }
                 if (categories.length === 0 || units.length === 0) {
-                  setFormMessage("Mahsulot qo'shishdan oldin kamida bitta kategoriya va birlik yarating yoki seed qiling.");
+                  setErrorMessage("Mahsulot qo'shishdan oldin kamida bitta kategoriya va birlik yarating yoki seed qiling.");
                   return;
                 }
+                // category va unit bir marta, forma ochilganda o'rnatiladi — useEffect emas
                 setForm({
                   ...emptyForm,
                   category: categories[0]?.id ?? "",
                   unit: units[0]?.id ?? "",
                 });
-                setFormMessage("");
+                setErrorMessage("");
+                setSuccessMessage("");
               }}
             />
           </div>
@@ -235,28 +277,16 @@ export function ProductsDashboardPage() {
           </div>
           <div className="grid gap-3 md:grid-cols-3">
             <label className="grid gap-1 text-sm font-bold text-slate-700">
-              Nomi
+              Nomi *
               <input
+                ref={nameInputRef}
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
+                placeholder="Mahsulot nomini kiriting"
                 className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
-              Kategoriya
-              <select
-                value={form.category}
-                onChange={(event) => setForm({ ...form, category: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
-              >
-                <option value="">Kategoriya tanlang</option>
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-            </label>
+
             <label className="grid gap-1 text-sm font-bold text-slate-700">
               Birlik
               <select
@@ -273,13 +303,33 @@ export function ProductsDashboardPage() {
               </select>
             </label>
             <label className="grid gap-1 text-sm font-bold text-slate-700">
-              SKU
-              <input
-                value={form.sku}
-                onChange={(event) => setForm({ ...form, sku: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
-              />
+              Hajmi (litr)
+              <select
+                value={form.volume_preset}
+                onChange={(event) => setForm({ ...form, volume_preset: event.target.value })}
+                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
+              >
+                <option value="">Tanlamaslik</option>
+                <option value="0.5">0.5 L</option>
+                <option value="0.9">0.9 L</option>
+                <option value="1">1.0 L</option>
+                <option value="1.5">1.5 L</option>
+                <option value="2">2.0 L</option>
+                <option value="Boshqa...">Boshqa...</option>
+              </select>
             </label>
+            {form.volume_preset === "Boshqa..." && (
+              <label className="grid gap-1 text-sm font-bold text-slate-700">
+                BOSHQA HAJM (LITR) *
+                <input
+                  value={form.volume_custom}
+                  onChange={(event) => setForm({ ...form, volume_custom: event.target.value })}
+                  placeholder="0.33"
+                  className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
+                />
+              </label>
+            )}
+
             <label className="grid gap-1 text-sm font-bold text-slate-700">
               Barcode
               <input
@@ -288,27 +338,16 @@ export function ProductsDashboardPage() {
                 className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
               />
             </label>
-            <label className="grid gap-1 text-sm font-bold text-slate-700">
-              Brend
-              <select
-                value={form.brand}
-                onChange={(event) => setForm({ ...form, brand: event.target.value })}
-                className="h-11 rounded-xl border border-red-100/50 bg-white px-3.5 shadow-soft"
-              >
-                <option value="">Brendsiz</option>
-                {brands.map((brand) => (
-                  <option key={brand.id} value={brand.id}>
-                    {brand.name}
-                  </option>
-                ))}
-              </select>
-            </label>
+
             <label className="grid gap-1 text-sm font-bold text-slate-700">
               Kirim narxi
               <input
                 value={form.cost_price}
                 onChange={(event) =>
                   setForm({ ...form, cost_price: event.target.value })
+                }
+                onBlur={() =>
+                  setForm({ ...form, cost_price: formatPrice(form.cost_price) })
                 }
                 inputMode="decimal"
                 className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
@@ -320,6 +359,9 @@ export function ProductsDashboardPage() {
                 value={form.selling_price}
                 onChange={(event) =>
                   setForm({ ...form, selling_price: event.target.value })
+                }
+                onBlur={() =>
+                  setForm({ ...form, selling_price: formatPrice(form.selling_price) })
                 }
                 inputMode="decimal"
                 className="h-11 rounded-xl border border-red-100/50 px-3.5 shadow-soft"
@@ -337,9 +379,9 @@ export function ProductsDashboardPage() {
               Faol
             </label>
           </div>
-          {formMessage ? (
-            <div className="mt-3 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm font-bold text-amber-900">
-              {formMessage}
+            {errorMessage ? (
+            <div className="mt-3 rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
+              {errorMessage}
             </div>
           ) : null}
           <IconButton
@@ -351,29 +393,30 @@ export function ProductsDashboardPage() {
             className="mt-3"
           />
         </form>
-      ) : formMessage ? (
+      ) : null}
+      {/* Muvaffaqiyat xabari */}
+      {successMessage ? (
+        <div className="rounded border border-green-200 bg-green-50 px-3 py-2 text-sm font-bold text-green-900">
+          {successMessage}
+        </div>
+      ) : errorMessage && !form ? (
         <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-900">
-          {formMessage}
+          {errorMessage}
         </div>
       ) : null}
       <DataTable
         title="Mahsulotlar ro'yxati"
         rows={products}
         rowKey={(row) => row.id}
-        emptyTitle={search ? "Mos mahsulot topilmadi" : "Mahsulot topilmadi"}
+        emptyTitle={debouncedSearch ? "Mos mahsulot topilmadi" : "Mahsulot topilmadi"}
         emptyDescription={
-          search
-            ? "Boshqa nom, SKU, barcode, kategoriya yoki brend bilan urinib ko'ring."
+          debouncedSearch
+            ? "Boshqa nom, SKU, barcode yoki kategoriya bilan urinib ko'ring."
             : "Katalogda yaratilgan mahsulotlar shu yerda chiqadi."
         }
         columns={[
           { key: "name", header: "Nomi", render: (row) => row.name },
-          { key: "sku", header: "SKU", render: (row) => row.sku || "-" },
-          {
-            key: "category",
-            header: "Kategoriya",
-            render: (row) => row.category_name,
-          },
+
           {
             key: "price",
             header: "Narx",
@@ -397,7 +440,8 @@ export function ProductsDashboardPage() {
                 hideLabel
                 onClick={() => {
                   setForm(formFromProduct(row));
-                  setFormMessage("");
+                  setErrorMessage("");
+                  setSuccessMessage("");
                 }}
               />
             ),

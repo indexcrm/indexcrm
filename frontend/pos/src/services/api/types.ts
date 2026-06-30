@@ -19,6 +19,7 @@ export type Product = {
   min_price: string;
   unit: string;
   unit_short_name: string;
+  volume?: string | null;
   image: string | null;
   is_active: boolean;
   has_expiry_date: boolean;
