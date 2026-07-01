@@ -301,6 +301,19 @@ export function ProductsDashboardPage() {
                   </option>
                 ))}
               </select>
+              {(() => {
+                const selUnit = units.find((u) => u.id === form.unit);
+                if (!selUnit) return null;
+                const sn = selUnit.short_name.toLowerCase();
+                const isWeight = ["kg", "g", "gr", "tonna", "t"].includes(sn);
+                const isVolume = ["l", "litr", "ml", "liters"].includes(sn);
+                const label = isWeight ? "Og'irligi" : isVolume ? "Hajmi" : "Miqdori";
+                return (
+                  <span className="text-xs font-semibold text-slate-500">
+                    {label} ({selUnit.short_name})
+                  </span>
+                );
+              })()}
             </label>
             {(() => {
               const selUnit = units.find((u) => u.id === form.unit);
@@ -330,6 +343,9 @@ export function ProductsDashboardPage() {
                       ))}
                       <option value="Boshqa...">Boshqa...</option>
                     </select>
+                    <span className="text-xs font-semibold text-slate-500">
+                      {fieldLabel} ({selUnit.short_name})
+                    </span>
                   </label>
                   {form.volume_preset === "Boshqa..." && (
                     <label className="grid gap-1 text-sm font-bold text-slate-700">
